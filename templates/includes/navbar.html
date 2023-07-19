@@ -1,0 +1,96 @@
+{% load static %}
+<div>
+    <button id="myBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"><img src="{% static 'assets/img/razer_icon_1.png' %}" alt=""></button>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-body">
+            <div class="razer-sidenav-container">
+                <ul class="razer-sidenav">
+                    <div class="razer-sidenav-item-holder">
+                        <div class="razer-sidenav-item-border">
+                            <li><a class="razer-sidenav-item" id="side-1" href="#">SERVICE</a>
+                                <div class="razer-sidenav-submenu" id="sub-1">
+                                    <div class="razer-sidenav-submenu-style">
+                                        <ul>
+                                            <li>
+                                                <h2 class="razer-overlapping-header"><span><span
+                                                            class="razer-overlapping-span1">WE PROVIDE</span><br><span
+                                                            class="sub-span">SERVICE</span></span></h2>
+                                            </li>
+                                            <li><a href="inner-page.html">BRAND STRATEGY</a></li>
+                                            <hr>
+                                            <li><a href="#">BRAND IDENTITY DESIGN</a></li>
+                                            <hr>
+                                            <li><a href="#">WEBSITE DESIGN AND DEVELOPMENT</a></li>
+                                            <hr>
+                                            <li><a href="#">DIGITAL MARKETING</a></li>
+                                            <hr>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+                        <i><img class="razer-sidenav-icon" src="{% static 'assets/img/service.png' %}" alt=""></i>
+                    </div>
+                    <div class="razer-sidenav-item-holder">
+                        <div class="razer-sidenav-item-border">
+                            <li><a class="razer-sidenav-item" id="side-2" href="#">PORTFOLIO</a>
+                                <div class="razer-sidenav-submenu" id="sub-2">
+                                    <div class="razer-sidenav-submenu-style">
+                                        <ul>
+                                            <li><a href="">TEST</a></li>
+                                            <li><a href="">TEST</a></li>
+                                            <li><a href="">TEST</a></li>
+                                            <li><a href="">TEST</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+                        <i><img class="razer-sidenav-icon" src="{% static 'assets/img/shop.png' %}" alt=""></i>
+                    </div>
+                    <div class="razer-sidenav-item-holder">
+                        <div class="razer-sidenav-item-border">
+                            <li><a class="razer-sidenav-item" href="#team">BLOG</a></li>
+                        </div>
+                        <i><img class="razer-sidenav-icon" src="{% static 'assets/img/blog.png' %}" alt=""></i>
+                    </div>
+                    <div class="razer-sidenav-item-holder">
+                        <div class="razer-sidenav-item-border">
+                            <li><a class="razer-sidenav-item" href="#team">ABOUT US</a></li>
+                        </div>
+                        <i><img class="razer-sidenav-icon" src="{% static 'assets/img/about.png' %}" alt=""></i>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="offcanvas-footer">
+            <div>
+                <a href="" class="razer-sidenav-footer-text">TERMS AND CONDITIONS</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+    <div class="d-flex justify-content-between">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="index.html" class="logo me-auto"><img src="{% static 'assets/img/logo.png' %}" alt="" class="img-fluid" /></a>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="index.html">HOME</a></li>
+                <li><a class="nav-link scrollto" href="services.html">SERVICE</a></li>
+                <li><a class="nav-link scrollto" href="shop.html">SHOP</a></li>
+                <li>
+                    <a class="nav-link scrollto" href="#portfolio">PORTFOLIO</a>
+                </li>
+                <li><a class="nav-link scrollto" href="about.html">ABOUT US</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+    </div>
+</header>
+<!-- End Header -->
