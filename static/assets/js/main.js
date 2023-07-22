@@ -273,6 +273,9 @@
 
   // Get the button for sidebar
   let mybutton = document.getElementById("myBtn");
+  let lb = document.getElementById("lb")
+  let lb1 = document.getElementById("lb1")
+  let lb2 = document.getElementById("lb2")
   let myOffcanvas = document.getElementsByClassName("offcanvas");
   let razerOffcanvas = myOffcanvas[0];
   // When the user scrolls down 20px from the top of the document, show the button
@@ -282,31 +285,37 @@
 
   function scrollFunction() {
     if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
+      document.body.scrollTop > 30 ||
+      document.documentElement.scrollTop > 30
     ) {
-      mybutton.style.display = "block";
-    } else {
-      mybutton.style.display = "none";
+      mybutton.style.display = "flex";
+      lb.style.width = "9px"
+      lb1.style.width = "30px"
+      lb2.style.width = "60px"
+      
+    } else{
+      
+      lb.style.width = "0px"
+      lb1.style.width = "0px"
+      lb2.style.width = "0px"
     }
+    // else{
+    //   mybutton.style.display = "none";
+    // }
   }
 
   // When the user clicks on the button, scroll to the top of the document
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
 
   razerOffcanvas.addEventListener("show.bs.offcanvas", function () {
     mybutton.style.display = "none";
   });
   razerOffcanvas.addEventListener("hidden.bs.offcanvas", function () {
-    mybutton.style.display = "block";
+    mybutton.style.display = "flex";
   });
 
-  function showSubNav(){
-    document.getElementsByClassName('razer-sidenav-submenu').style.display = "block"
-  }
+  // function showSubNav(){
+  //   document.getElementsByClassName('razer-sidenav-submenu').style.display = "block"
+  // }
 
 
   $(document).ready(function () {
@@ -332,7 +341,7 @@
     mybutton.style.display = "none";
   });
   razerOffcanvas.addEventListener("hidden.bs.offcanvas", function () {
-    mybutton.style.display = "block";
+    mybutton.style.display = "flex";
     $("#sub-1").removeClass("razer-sidenav-submenu-active");
     $("#sub-2").removeClass("razer-sidenav-submenu-active");
   });

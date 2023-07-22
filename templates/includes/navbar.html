@@ -1,7 +1,11 @@
 {% load static %}
 <div>
-    <button id="myBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-        aria-controls="offcanvasRight"><img src="{% static 'assets/img/razer_icon_1.png' %}" alt=""></button>
+    <button class="button-float" id="myBtn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+      aria-controls="offcanvasRight">
+        <div id="lb" class="loading-bar"></div>
+        <div id="lb1" class="loading-bar1"></div>
+        <div id="lb2" class="loading-bar2"></div>
+      </button>
 
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-body">
@@ -14,9 +18,9 @@
                                     <div class="razer-sidenav-submenu-style">
                                         <ul>
                                             <li>
-                                                <h2 class="razer-overlapping-header"><span><span
-                                                            class="razer-overlapping-span1">WE PROVIDE</span><br><span
-                                                            class="sub-span">SERVICE</span></span></h2>
+                                            <h2 class="razer-overlapping-header"><span><span
+                                                class="razer-overlapping-span1">WE PROVIDE</span><br><span
+                                                class="sub-span">SERVICE</span></span></h2>
                                             </li>
                                             <li><a href="inner-page.html">BRAND STRATEGY</a></li>
                                             <hr>
@@ -80,13 +84,13 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto active" href="index.html">HOME</a></li>
-                <li><a class="nav-link scrollto" href="services.html">SERVICE</a></li>
-                <li><a class="nav-link scrollto" href="shop.html">SHOP</a></li>
+                <li><a class="nav-link scrollto {% if title_name == 'Index' %}active{%endif%}" href="{% url 'index' %}">HOME</a></li>
+                <li><a class="nav-link scrollto {% if title_name == 'Service' %}active{%endif%}" href="{% url 'service' %}">SERVICE</a></li>
+                <li><a class="nav-link scrollto {% if title_name == 'Shop' %}active{%endif%}" href="{% url 'shop' %}">SHOP</a></li>
                 <li>
-                    <a class="nav-link scrollto" href="#portfolio">PORTFOLIO</a>
+                    <a class="nav-link scrollto {% if title_name == 'Portfolio' %}active{%endif%}" href="#portfolio">PORTFOLIO</a>
                 </li>
-                <li><a class="nav-link scrollto" href="about.html">ABOUT US</a></li>
+                <li><a class="nav-link scrollto {% if title_name == 'About' %}active{%endif%}" href="{% url 'about' %}">ABOUT US</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>

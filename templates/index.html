@@ -101,86 +101,18 @@
         </ul>
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img">
-              <img src="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt="" />
-            </div>
-            <div class="portfolio-info">
-              <h4>App 1</h4>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img">
-              <img src="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt="" />
-            </div>
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img">
-              <img src="{% static 'assets/img/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt="" />
-            </div>
-            <div class="portfolio-info">
-              <h4>App 2</h4>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img">
-              <img src="{% static 'assets/img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="" />
-            </div>
-            <div class="portfolio-info">
-              <h4>Card 2</h4>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img">
-              <img src="{% static 'assets/img/portfolio/portfolio-5.jpg' %}" class="img-fluid" alt="" />
-            </div>
-            <div class="portfolio-info">
-              <h4>Web 2</h4>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img">
-              <img src="{% static 'assets/img/portfolio/portfolio-6.jpg' %}" class="img-fluid" alt="" />
-            </div>
-            <div class="portfolio-info">
-              <h4>App 3</h4>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img">
-              <img src="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" class="img-fluid" alt="" />
-            </div>
-            <div class="portfolio-info">
-              <h4>Card 1</h4>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img">
-              <img src="{% static 'assets/img/portfolio/portfolio-8.jpg' %}" class="img-fluid" alt="" />
-            </div>
-            <div class="portfolio-info">
-              <h4>Card 3</h4>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img">
-              <img src="{% static 'assets/img/portfolio/portfolio-9.jpg' %}" class="img-fluid" alt="" />
-            </div>
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-            </div>
-          </div>
+          {% for project in projects %}
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <a href="{% url 'detail_project' project.id %}">
+              <div class="portfolio-img">
+                <img src="{{project.project_image.url}}" class="img-fluid" alt="" />
+              </div>
+              <div class="portfolio-info">
+                <h4>{{project.name}}</h4>
+              </div>
+            </a>
+            </div>  
+          {% endfor %}
         </div>
         <div class="razer-button-container">
           <a href="#" class="razer-styled-button">VIEW MORE</a>
@@ -195,26 +127,49 @@
       <div class="container">
         <div class="row">
           <div class="section-title">
-            <h2 class="razer-banner">
-              <span class="razer-huge-text">OUR <span class="span-razer">CLIENTS</span> OUR
-                <span class="span-razer">CLIENTS</span> OUR
-                <span class="span-razer">CLIENTS</span>
-                OUR <span class="span-razer">CLIENTS</span> OUR
-                <span class="span-razer">CLIENTS</span> OUR
-                <span class="span-razer">CLIENTS</span>
-                OUR <span class="span-razer">CLIENTS</span> OUR
-                <span class="span-razer">CLIENTS</span> OUR
-                <span class="span-razer">CLIENTS</span>
-                OUR <span class="span-razer">CLIENTS</span> OUR
-                <span class="span-razer">CLIENTS</span> OUR
-                <span class="span-razer">CLIENTS</span> OUR
-                <span class="span-razer">CLIENTS</span>
-                OUR <span class="span-razer">CLIENTS</span> OUR
-                <span class="span-razer">CLIENTS</span> OUR
-                <span class="span-razer">CLIENTS</span>
-                OUR <span class="span-razer">CLIENTS</span> OUR
-                <span class="span-razer">CLIENTS</span></span>
-            </h2>
+            <div class="razer-moving-text">
+              <div class="list">
+                <div class="item">
+                  <span class="item-txt span-razer-white">OUR</span>
+                  <span class="item-d">
+                    <p class="item-dot dot-t"></p>
+                  </span>
+                  <span class="item-txt span-razer">CLIENTS</span>
+                  <span class="item-d">
+                    <p class="item-dot dot-b"></p>
+                  </span>
+                  <span class="item-txt span-razer-white">OUR</span>
+                  <span class="item-d">
+                    <p class="item-dot dot-g"></p>
+                  </span>
+                  <span class="item-txt span-razer">CLIENTS</span>
+                  <span class="item-d">
+                    <p class="item-dot dot-y"></p>
+                  </span>
+                 </div>
+              </div>
+                <div class="list">
+                <div class="item">
+                  <span class="item-txt span-razer-white">OUR</span>
+                  <span class="item-d">
+                    <p class="item-dot dot-t"></p>
+                  </span>
+                  <span class="item-txt span-razer">CLIENTS</span>
+                  <span class="item-d">
+                    <p class="item-dot dot-b"></p>
+                  </span>
+                  <span class="item-txt span-razer-white">OUR</span>
+                  <span class="item-d">
+                    <p class="item-dot dot-g"></p>
+                  </span>
+                  <span class="item-txt span-razer">CLIENTS</span>
+                  <span class="item-d">
+                    <p class="item-dot dot-y"></p>
+                  </span>
+            
+                 </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

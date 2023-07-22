@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 <!-- ======= Hero Section ======= -->
 <div id="home">
     <div id="razerFirstCarousel" class="my-carousel carousel slide carousel-fade" data-bs-ride=""
@@ -13,7 +16,7 @@
             <img src="{% static 'assets/img/front_page.jpg' %}" class="d-block w-100" alt="..." />
             <div class="razer-carousel-caption carousel-caption-razer-home d-none d-md-block">
               <h1 class="razer-carousel-shop-header-text">
-                CULTURAL AND MODERN <br> <span class="span-razer">3D ASSETS</span> 
+                RAZER <br> <span class="span-razer">SHOP</span> 
               </h1>
             </div>
           </div>
@@ -40,33 +43,69 @@
       <div class="container">
         <div class="row">
           <div class="section-title">
-            <h2 class="razer-banner">
-              <span class="razer-huge-text">OUR <span class="span-razer">PRODUCTS</span> OUR
-                <span class="span-razer">PRODUCTS</span> OUR
-                <span class="span-razer">PRODUCTS</span>
-                OUR <span class="span-razer">PRODUCTS</span> OUR
-                <span class="span-razer">PRODUCTS</span> OUR
-                <span class="span-razer">PRODUCTS</span>
-                OUR <span class="span-razer">PRODUCTS</span> OUR
-                <span class="span-razer">PRODUCTS</span> OUR
-                <span class="span-razer">PRODUCTS</span>
-                OUR <span class="span-razer">PRODUCTS</span> OUR
-                <span class="span-razer">PRODUCTS</span> OUR
-                <span class="span-razer">PRODUCTS</span> OUR
-                <span class="span-razer">PRODUCTS</span>
-                OUR <span class="span-razer">PRODUCTS</span> OUR
-                <span class="span-razer">PRODUCTS</span> OUR
-                <span class="span-razer">PRODUCTS</span>
-                OUR <span class="span-razer">PRODUCTS</span> OUR
-                <span class="span-razer">PRODUCTS</span></span>
-            </h2>
+            <div class="razer-moving-text">
+                <div class="list">
+                  <div class="item">
+                    <span class="item-txt span-razer-white">COMING </span>
+                    <span class="item-d">
+                      <p class="item-dot dot-t"></p>
+                    </span>
+                    <span class="item-txt span-razer">SOON </span>
+                    <span class="item-d">
+                      <p class="item-dot dot-b"></p>
+                    </span>
+                    <span class="item-txt span-razer-white">COMING </span>
+                    <span class="item-d">
+                      <p class="item-dot dot-g"></p>
+                    </span>
+                    <span class="item-txt span-razer">SOON </span>
+                    <span class="item-d">
+                      <p class="item-dot dot-y"></p>
+                    </span>
+                    <span class="item-txt span-razer-white">COMING </span>
+                    <span class="item-d">
+                      <p class="item-dot dot-g"></p>
+                    </span>
+                    <span class="item-txt span-razer">SOON </span>
+                    <span class="item-d">
+                      <p class="item-dot dot-y"></p>
+                    </span>
+                   </div>
+                   <div class="item">
+                    <span class="item-txt span-razer-white">COMING </span>
+                    <span class="item-d">
+                      <p class="item-dot dot-t"></p>
+                    </span>
+                    <span class="item-txt span-razer">SOON </span>
+                    <span class="item-d">
+                      <p class="item-dot dot-b"></p>
+                    </span>
+                    <span class="item-txt span-razer-white">COMING </span>
+                    <span class="item-d">
+                      <p class="item-dot dot-g"></p>
+                    </span>
+                    <span class="item-txt span-razer">SOON </span>
+                    <span class="item-d">
+                      <p class="item-dot dot-y"></p>
+                    </span>
+                    <span class="item-txt span-razer-white">COMING </span>
+                    <span class="item-d">
+                      <p class="item-dot dot-g"></p>
+                    </span>
+                    <span class="item-txt span-razer">SOON </span>
+                    <span class="item-d">
+                      <p class="item-dot dot-y"></p>
+                    </span>
+                   </div>
+                </div>
+              </div>
           </div>
         </div>
       </div>
     </section>
     <!-- End Clients Section Title -->
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
+    {% comment %} <section id="portfolio" class="portfolio section-bg">
       <div class="container" data-aos="fade-up">
         
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
@@ -163,10 +202,10 @@
           <button class="extend-razer-styled-button"></button>
         </div>
       </div>
-    </section>
+    </section> {% endcomment %}
     <!-- End Portfolio Section -->
     <!-- MockUp -->
-    <section class="section">
+    {% comment %} <section class="section">
       <div class="container">
           <div class="mockup-header-container">
               <div class="row justify-content-between align-items-center">
@@ -304,7 +343,8 @@
               <button class="extend-razer-styled-button"></button>
           </div>
       </div>
-    </section>
+    </section> {% endcomment %}
     <!-- End MockUp -->
   </main>
   <!-- End #main -->
+  {% endblock content %}

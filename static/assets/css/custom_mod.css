@@ -106,26 +106,49 @@
 }
 
 /* Razer moving text */
+.razer-moving-text {
+  margin: 30px 0;
+  display: flex;
+  white-space: nowrap;
+}
 
-.razer-banner {
-  white-space: nowrap;
-  overflow: hidden;
-  white-space: nowrap;
+.list {
+  display: flex;
+  align-items: top;
+  -webkit-animation: loop 50s infinite linear;
+  animation: loop 50s infinite linear;
+}
+
+.item-txt {
+  font-family: "Fester", sans-serif;
+  font-size: 10em;
+  line-height: 110px;
+  font-weight: 650;
+  text-transform: uppercase;
+}
+
+.span-razer-white {
+  color: #f2f2f2;
+}
+
+.item-d {
+  display: inline;
+}
+
+.item-dot {
+  max-width: 20px;
+  max-height: 20px;
+  margin: 0 20px;
+  padding: 10px;
+  border-radius: 50%;
   display: inline-block;
-  padding-left: 100%;
-  animation: banner 300s linear infinite;
+  transform: translateY(-30px);
 }
 
-.razer-banner .razer-huge-text {
-  font-size: 3em;
-}
-
-@keyframes banner {
-  0% {
-    transform: translate(0, 0);
-  }
+@keyframes loop {
   100% {
-    transform: translate(-100%, 0);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 }
 
@@ -228,7 +251,7 @@
 }
 
 /* sidebar toggle button */
-#myBtn {
+/* #myBtn {
   display: none;
   position: fixed;
   top: 50%;
@@ -252,6 +275,60 @@
 
 #myBtn:hover {
   background-color: #555;
+} */
+.button-float {
+  display: none;
+  position: fixed;
+  top: 50%;
+  right: 5%;
+  z-index: 99;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  flex-direction: column;
+  align-items:end;
+  background-color: transparent;
+  border: none;
+}
+.loading-bar {
+  width: 9px;
+  height: 10px;
+  margin: 0.5px 0 5px 0;
+  background-color: #e3a325;
+  border-radius: 5px;
+  transition-duration: .15s;
+  animation: progressAnim .2s;
+}
+.loading-bar1 {
+  width: 30px;
+  height: 10px;
+  margin: 0.5px 0 5px 0;
+  background-color: #e3a325;
+  border-radius: 5px;
+  transition-duration: .15s;
+  animation: progressAnim1 .5s;
+}
+.loading-bar2 {
+  width: 60px;
+  height: 10px;
+  margin: 0.5px 0 5px 0;
+  background-color: #e3a325;
+  border-radius: 5px;
+  transition-duration: .30s;
+  animation: progressAnim2 .8s;
+}
+@keyframes progressAnim {
+  from {width: 0}
+  to {width: 10px}
+}
+@keyframes progressAnim1 {
+  from {width: 0}
+  to {width: 31px}
+}
+
+@keyframes progressAnim2 {
+  from {width: 0}
+  to {width: 61px}
 }
 
 .offcanvas-header button {
@@ -456,10 +533,6 @@
   color: #f2f2f2;
 }
 
-.razer-service-1 {
-  background-image: url("assets/img/front_page.jpg");
-}
-
 .clients hr {
   max-width: 100%;
   border: 1px solid #e3a325;
@@ -601,102 +674,6 @@
 .razer-shop-ui-btn:focus span {
   color: var(--hover-btn-color);
 }
-
-.razer-shop-ui-btn:hover span::before,
-.razer-shop-ui-btn:focus span::before {
-  animation: chitchat linear both var(--btn-animation-duration);
-}
-
-@keyframes chitchat {
-  0% {
-    content: "#";
-  }
-
-  5% {
-    content: ".";
-  }
-
-  10% {
-    content: "^{";
-  }
-
-  15% {
-    content: "-!";
-  }
-
-  20% {
-    content: "#$_";
-  }
-
-  25% {
-    content: "№:0";
-  }
-
-  30% {
-    content: "#{+.";}35%{content: "@}-?";
-  }
-
-  40% {
-    content: "?{4@%";
-  }
-
-  45% {
-    content: "=.,^!";
-  }
-
-  50% {
-    content: "?2@%";
-  }
-
-  55% {
-    content: "\;1}]";
-  }
-
-  60% {
-    content: "?{%:%";
-    right: 0;
-  }
-
-  65% {
-    content: "|{f[4";
-    right: 0;
-  }
-
-  70% {
-    content: "{4%0%";
-    right: 0;
-  }
-
-  75% {
-    content: "'1_0<";
-    right: 0;
-  }
-
-  80% {
-    content: "{0%";
-    right: 0;
-  }
-
-  85% {
-    content: "]>'";
-    right: 0;
-  }
-
-  90% {
-    content: "4";
-    right: 0;
-  }
-
-  95% {
-    content: "2";
-    right: 0;
-  }
-
-  100% {
-    content: "";
-    right: 0;
-  }
-}
 /* End Razer shop */
 
 /* Razer About page */
@@ -832,6 +809,33 @@
   background-color: transparent;
   transition: border-color 0.3s ease-in-out;
 }
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #555;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #555;
+  opacity: 1;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #555;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #555;
+}
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #555;
+}
+
+::placeholder {
+  /* Most modern browsers support this now. */
+  color: #555;
+}
 
 .underline {
   position: absolute;
@@ -855,21 +859,20 @@
 
 .invite-btn {
   position: absolute;
-  width: 250px;
+  width: 20%;
   right: 4px;
   top: -22px;
   bottom: 22px;
   z-index: 10;
-  border-radius: 4px;
+  border-radius: 50%;
   background-color: transparent;
   color: #555;
   padding: 10px;
   text-align: center;
   vertical-align: middle;
   font-size: 16px;
-  font-weight: 600;
   text-transform: uppercase;
-  border-radius: 20px;
+  border-radius: 40px;
   transition: 0.6s ease;
   border: 1px solid #e3a325;
 }
@@ -880,6 +883,127 @@
 }
 
 /* End Razer About page */
+
+/* Razer Project */
+.project-row>*{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.razer-project{
+  padding-top: 0;
+}
+
+.razer-project .container{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.razer-project-right-column{
+  margin-left: 50px;
+}
+
+.razer-img-scrollable{
+  overflow-y: scroll; 
+  height:806px;
+}
+
+.razer-img-scrollable::-webkit-scrollbar {
+  width: 12px;
+}
+
+.razer-project-img{
+  width: 100%;
+  height: 390px;
+  background-size: cover;
+}
+
+.razer-project-text-container{
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
+
+.razer-project-link-container{
+  margin-bottom: 50px;
+}
+
+.razer-project-button-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.razer-project-button-holder{
+  width: 202px;
+  display: flex;
+}
+
+.razer-project-header-text{
+  font-size: 4em;
+  margin-top: 40px;
+}
+
+.razer-project-text{
+  color: #f2f2f2;
+}
+
+.project-extend-razer-styled-button {
+  border: 2px solid #e3a325;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px / 50px; /* half of 100px, half of 50px */
+  padding: 10px 20px;
+  font-size: 20px;
+  color: white;
+  margin-left: auto;
+}
+.project-razer-styled-button {
+  text-decoration: none;
+  position: absolute;
+  border: 4px solid transparent;
+  background-color: transparent;
+  height: 50px;
+  border-radius: 50px / 50px; /* half of 100px, half of 50px */
+  padding: 10px 8px;
+  font-size: 18px;
+  color: white;
+}
+.project-razer-styled-button:hover + .project-extend-razer-styled-button {
+  width: 100%;
+  transition: width 0.3s ease-in-out;
+}
+.project-razer-styled-button:hover {
+  color: #fff;
+}
+
+.next-project-extend-razer-styled-button {
+  border: 2px solid #e3a325;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px / 50px; /* half of 100px, half of 50px */
+  padding: 10px 20px;
+  font-size: 20px;
+  color: white;
+}
+.next-project-razer-styled-button {
+  text-decoration: none;
+  position: absolute;
+  border: 4px solid transparent;
+  background-color: transparent;
+  height: 50px;
+  border-radius: 50px / 50px; /* half of 100px, half of 50px */
+  padding: 10px 20px;
+  font-size: 18px;
+  color: white;
+}
+.next-project-razer-styled-button:hover + .next-project-extend-razer-styled-button {
+  width: 185px;
+  transition: width 0.3s ease-in-out;
+}
+.next-project-razer-styled-button:hover {
+  color: #fff;
+}
+/* End Razer Project */
 
 /* Razer Footer Space */
 .footer-bottom .razer-footer-space {

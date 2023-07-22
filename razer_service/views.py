@@ -1,8 +1,8 @@
 from django.shortcuts import render
-
 # Create your views here.
+
 def service(request):
     context = {
-        'title_name': 'service'
+        'title_name': 'Service'
     }
     return render(request, 'service/service.html', context)

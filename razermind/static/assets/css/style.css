@@ -1006,13 +1006,12 @@ section {
   color: #fff;
   transition: all 0.3s;
   padding: 8px 20px;
-  border-radius: 50px;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
 }
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-  background: #e3a325;
+  border-bottom: 1px solid #e3a325;
   color: #fff;
 }
 

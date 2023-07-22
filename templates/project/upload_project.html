@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- ======= Hero Section ======= -->
+    <div id="home">
+      <div id="razerFirstCarousel" class="my-carousel carousel slide carousel-fade" data-bs-ride=""
+        data-bs-interval="5000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{% static 'assets/img/front_page.jpg' %}" class="d-block w-100" alt="..." />
+              <div class="carousel-caption carousel-caption-razer-team d-none d-md-block">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'assets/img/img_2.jpg' %}" class="d-block w-100" alt="..." />
+              <div class="carousel-caption carousel-caption-razer-team d-none d-md-block">
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'assets/img/img_3.jpg' %}" class="d-block w-100" alt="..." />
+              <div class="carousel-caption carousel-caption-razer-team d-none d-md-block">
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- End Hero -->
+    <main id="main">  
+      <section class="section razer-project">
+        <div class="container">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Submit" />
+            
+            </form>
+      </section>  
+    </main>
+    <!-- End #main -->
+  <!-- End #main -->
+{% endblock content %}
