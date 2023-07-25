@@ -21,6 +21,18 @@ class Project(models.Model):
         return self.name
     
 class ProjectPhoto(models.Model):
-    project = models.ForeignKey(Project, on_delete=models.SET_NULL, null=True, blank=True)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
     images = models.ImageField(blank=True, null=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+
+    def __str__(self):
+        return self.project
+
+
+class UserProject(models.Model):
+    name = models.CharField('Name', max_length=50)
+    email = models.EmailField('Email')
+    description = models.TextField('Description', blank=True, null=True)
+
+    def __str__(self):
+        return self.name

@@ -9,3 +9,6 @@ class ProjectForm(ModelForm):
         widgets = {
                 'tags': forms.CheckboxSelectMultiple(),
             }
+        
+
+        
