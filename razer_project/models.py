@@ -16,9 +16,13 @@ class Project(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
     description = models.TextField('Description', blank=True, null=True)
     project_image = models.ImageField(null=False, blank=False)
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
+    
+    class Meta:
+        ordering = ['created']
     
 class ProjectPhoto(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)

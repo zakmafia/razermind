@@ -1,68 +1,109 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
-    <!-- ======= Hero Section ======= -->
-    <div id="home">
-      <div id="razerFirstCarousel" class="my-carousel carousel slide carousel-fade" data-bs-ride=""
-        data-bs-interval="5000">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="{{project.project_image.url}}" class="d-block w-100" alt="..." />
-              <div class="carousel-caption carousel-caption-razer-team d-none d-md-block">
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="{% static 'assets/img/img_2.jpg' %}" class="d-block w-100" alt="..." />
-              <div class="carousel-caption carousel-caption-razer-team d-none d-md-block">
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="{% static 'assets/img/img_3.jpg' %}" class="d-block w-100" alt="..." />
-              <div class="carousel-caption carousel-caption-razer-team d-none d-md-block">
-              </div>
-            </div>
-          </div>
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- ======= Hero Section ======= -->
+<div id="home">
+  <div
+    id="razerFirstCarousel"
+    class="my-carousel carousel slide carousel-fade"
+    data-bs-ride=""
+    data-bs-interval="5000"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          src="{{project.project_image.url}}"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div
+          class="carousel-caption carousel-caption-razer-team d-none d-md-block"
+        ></div>
+      </div>
+      <div class="carousel-item">
+        <img
+          src="{% static 'assets/img/img_2.jpg' %}"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div
+          class="carousel-caption carousel-caption-razer-team d-none d-md-block"
+        ></div>
+      </div>
+      <div class="carousel-item">
+        <img
+          src="{% static 'assets/img/img_3.jpg' %}"
+          class="d-block w-100"
+          alt="..."
+        />
+        <div
+          class="carousel-caption carousel-caption-razer-team d-none d-md-block"
+        ></div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- End Hero -->
-    <main id="main">  
-      <section class="section razer-project">
-        <div class="container">
-          <div class="row project-row">
-            <div class="col-lg-7">
-              <div class="razer-img-scrollable">
-                {% for project_photo in project_photos %}
-                <img src="{{project_photo.images.url}}" class="razer-project-img" alt="..." />
-                {% endfor %}
-               
-              </div>
+<!-- End Hero -->
+<main id="main">
+  <section class="section razer-project">
+    <div class="container">
+      <div class="row project-row">
+        <div class="col-lg-7">
+          <div class="razer-img-scrollable">
+            {% for project_photo in project_photos %}
+            <img
+              src="{{project_photo.images.url}}"
+              class="razer-project-img"
+              alt="..."
+            />
+            {% endfor %}
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="razer-project-right-column">
+            <h2 class="razer-project-header-text">
+              <span class="span-razer">{{project.name}}</span>
+            </h2>
+            <div class="razer-project-text-container">
+              <p class="razer-project-text">{{project.description}}</p>
             </div>
-            <div class="col-lg-5">
-              <div class="razer-project-right-column">
-                <h2 class="razer-project-header-text"><span class="span-razer">{{project.name}}</span></h2>
-                <div class="razer-project-text-container">
-                  <p class="razer-project-text">{{project.description}}</p>
-                </div>
-                <div class="razer-project-link-container">
-                  <p><span class="span-razer">RE-BRANDING </span><span class="razer-project-text"> / </span><span class="span-razer">SOCIAL MEDIA </span><span class="razer-project-text"> / </span><span class="span-razer">3D CHARACTERS</span></p>
-                </div>
-                <div class="razer-project-button-container">
-                  <div class="razer-project-button-holder">
-                    <a href="#" class="project-razer-styled-button">PREVIOUS PROJECT</a>
-                    <button class="project-extend-razer-styled-button"></button>
-                  </div>
-                  <div class="razer-project-button-holder">
-                    <a href="#" class="next-project-razer-styled-button">NEXT PROJECT</a>
-                    <button class="next-project-extend-razer-styled-button"></button>
-                  </div>
-                </div>
-              </div>  
+            <div class="razer-project-link-container">
+              <p>
+                <span class="span-razer">RE-BRANDING </span
+                ><span class="razer-project-text"> / </span
+                ><span class="span-razer">SOCIAL MEDIA </span
+                ><span class="razer-project-text"> / </span
+                ><span class="span-razer">3D CHARACTERS</span>
+              </p>
+            </div>
+            <div class="razer-project-button-container">
+              {% if prev_project %}
+              <div class="razer-project-button-holder">
+                <a
+                  href="{% url 'detail_project' prev_project.id %}"
+                  class="project-razer-styled-button"
+                  >PREVIOUS PROJECT</a
+                >
+                <button class="project-extend-razer-styled-button"></button>
+              </div>
+              {% endif %} {% if next_project %}
+              <div class="razer-project-button-holder">
+                <a
+                  href="{% url 'detail_project' next_project.id %}"
+                  class="next-project-razer-styled-button"
+                  >NEXT PROJECT</a
+                >
+                <button
+                  class="next-project-extend-razer-styled-button"
+                ></button>
+              </div>
+              {% endif %}
             </div>
           </div>
         </div>
-      </section>  
-    </main>
-    <!-- End #main -->
-  <!-- End #main -->
+      </div>
+    </div>
+  </section>
+</main>
+<!-- End #main -->
+<!-- End #main -->
 {% endblock content %}
