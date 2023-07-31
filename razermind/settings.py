@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'razer_shop',
     'razer_service',
-    'razer_project'
+    'razer_project',
+    'razer_blog'
 ]
 
 MIDDLEWARE = [

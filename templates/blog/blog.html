@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- ======= Hero Section ======= -->
+<div id="home">
+    <div id="razerFirstCarousel" class="my-carousel carousel slide carousel-fade" data-bs-ride=""
+      data-bs-interval="5000">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#razerFirstCarousel" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#razerFirstCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#razerFirstCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% static 'assets/img/front_page.jpg' %}" class="d-block w-100" alt="..." />
+              <div class="razer-carousel-caption carousel-caption-razer-services d-none d-md-block">
+                  <h1 class="razer-carousel-service-header-text">
+                    WE SELL BRAND <br> <span class="span-razer">EXPERIENCE</span> 
+                  </h1>
+                </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'assets/img/img_2.jpg' %}" class="d-block w-100" alt="..." />
+          <div class="razer-carousel-caption carousel-caption-razer-services d-none d-md-block">
+            <h1 class="razer-carousel-service-header-text">Second slide label</h1>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{% static 'assets/img/img_3.jpg' %}" class="d-block w-100" alt="..." />
+          <div class="razer-carousel-caption carousel-caption-razer-services d-none d-md-block">
+            <h1 class="razer-carousel-service-header-text">Third slide label</h1>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>
+</div>
+  <!-- End Hero -->
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <form action="" method="POST">
+          {% csrf_token %}
+          <div class="razer-new-project-container">
+            <h1 class="razer-new-project-header">
+              <span class="span-razer">COMMENTS</span>
+            </h1>
+            <div class="razer-project-input-wrapper">
+              <input
+                class="razer-project-input-box"
+                type="text"
+                placeholder="NAME"
+                name="name"
+                required
+              />
+              <span class="underline"></span>
+            </div>
+            <div class="razer-project-input-wrapper">
+              <input
+                class="razer-project-input-box"
+                type="email"
+                placeholder="EMAIL"
+                name="email"
+                required
+              />
+              <span class="underline"></span>
+            </div>
+            <div class="razer-project-input-wrapper">
+              <input
+                class="razer-project-input-box"
+                type="text"
+                placeholder="HOW CAN WE HELP?"
+                name="comment"
+                required
+              />
+              <input
+                type="submit"
+                class="invite-btn"
+                type="button"
+                value="SUBMIT"
+              />
+              <span class="underline"></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <!-- End #main -->
+{% endblock content %}
