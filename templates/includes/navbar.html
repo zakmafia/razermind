@@ -152,6 +152,13 @@
         </li>
         <li>
           <a
+            class="nav-link scrollto {% if title_name == 'Blog' %}active{%endif%}"
+            href="#"
+            >BLOG</a
+          >
+        </li>
+        <li>
+          <a
             class="nav-link scrollto {% if title_name == 'About' %}active{%endif%}"
             href="{% url 'about' %}"
             >ABOUT US</a

@@ -885,6 +885,26 @@
 /* End Razer About page */
 
 /* Razer Project */
+
+.razer-mockup-container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 12px 12px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "razer-mockup-column-1 razer-mockup-column-1 razer-mockup-column-2"
+    "razer-mockup-column-3 razer-mockup-column-4 razer-mockup-column-2"
+    ". . .";
+}
+
+.razer-mockup-column-1 { grid-area: razer-mockup-column-1; background-color: blue; height: 50vh; }
+
+.razer-mockup-column-2 { grid-area: razer-mockup-column-2; background-color: green; }
+
+.razer-mockup-column-3 { grid-area: razer-mockup-column-3; background-color: yellow; }
+
+.razer-mockup-column-4 { grid-area: razer-mockup-column-4; background-color: orange; }
+
 .project-row>*{
   padding-left: 0px;
   padding-right: 0px;
@@ -1028,6 +1048,92 @@
 .razer-footer-header-text {
   color: #fff;
 }
+
+/* Razer Blog */
+.razer-blog-text {
+  color: #f2f2f2;
+}
+
+.razer-blog-header {
+  color: #f2f2f2;
+}
+
+.razer-blog-container{
+  width: 70%;
+  height: 70vh;
+}
+
+.razer-blog-image{
+  height: 50vh;
+  object-fit: cover;
+}
+
+.razer-blog-hr{
+  max-width: 100%;
+  border: 1px solid #e3a325;
+  opacity: 0.7;
+  margin: 20px 0;
+}
+
+.blog-extend-razer-styled-button {
+  border: 2px solid #e3a325;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px / 50px; /* half of 100px, half of 50px */
+  padding: 10px 20px;
+  font-size: 20px;
+  color: white;
+  margin-left: auto;
+}
+.blog-razer-styled-button {
+  text-decoration: none;
+  position: absolute;
+  border: 4px solid transparent;
+  background-color: transparent;
+  height: 50px;
+  border-radius: 50px / 50px; /* half of 100px, half of 50px */
+  padding: 10px 8px;
+  font-size: 18px;
+  color: white;
+}
+.blog-razer-styled-button:hover + .blog-extend-razer-styled-button {
+  width: 100%;
+  transition: width 0.3s ease-in-out;
+}
+.blog-razer-styled-button:hover {
+  color: #fff;
+}
+
+.next-blog-extend-razer-styled-button {
+  border: 2px solid #e3a325;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px / 50px; /* half of 100px, half of 50px */
+  padding: 10px 20px;
+  font-size: 20px;
+  color: white;
+}
+.next-blog-razer-styled-button {
+  text-decoration: none;
+  position: absolute;
+  border: 4px solid transparent;
+  background-color: transparent;
+  height: 50px;
+  border-radius: 50px / 50px; /* half of 100px, half of 50px */
+  padding: 10px 20px;
+  font-size: 18px;
+  color: white;
+}
+.next-blog-razer-styled-button:hover + .next-blog-extend-razer-styled-button {
+  width: 185px;
+  transition: width 0.3s ease-in-out;
+}
+.next-blog-razer-styled-button:hover {
+  color: #fff;
+}
+/* End Razer Blog */
 
 /* Mailchimp styles */
 #mc_embed_signup {

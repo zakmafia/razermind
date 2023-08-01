@@ -85,23 +85,16 @@
       <div class="container" data-aos="fade-up">
         <div class="section-title">
           <h2 class="razer-overlapping-header"><span><span class="razer-overlapping-span2">OUR PORTFOLIO</span><br><span>FEATURED <span class="span-razer">PROJECTS</span></span></span></h2>
-          <p>
-            Magnam dolores commodi suscipit. Necessitatibus eius consequatur
-            ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam
-            quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
-            Quia fugiat sit in iste officiis commodi quidem hic quas.
-          </p>
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-          <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-app">App</li>
-          <li data-filter=".filter-card">Card</li>
-          <li data-filter=".filter-web">Web</li>
+          <li data-filter=".filter-app">BRANDING</li>
+          <li data-filter=".filter-card">WEBSITES</li>
+          <li data-filter=".filter-web">SOCIAL MEDIA</li>
         </ul>
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-          {% for project in projects %}
+        <div class="row" data-aos="fade-up" data-aos-delay="200">
+          {% comment %} {% for project in projects %}
             <div class="col-lg-4 col-md-6 portfolio-item filter-app">
               <a href="{% url 'detail_project' project.id %}">
               <div class="portfolio-img">
@@ -112,12 +105,18 @@
               </div>
             </a>
             </div>  
-          {% endfor %}
+          {% endfor %} {% endcomment %}
+          <div class="razer-mockup-container">
+            <div class="razer-mockup-column-1">Hello</div>
+            <div class="razer-mockup-column-2">Hello</div>
+            <div class="razer-mockup-column-3">Hello</div>
+            <div class="razer-mockup-column-4">Hello</div>
+          </div>
         </div>
-        <div class="razer-button-container">
+        {% comment %} <div class="razer-button-container">
           <a href="#" class="razer-styled-button">VIEW MORE</a>
           <button class="extend-razer-styled-button"></button>
-        </div>
+        </div> {% endcomment %}
       </div>
     </section>
     <!-- End Portfolio Section -->
@@ -268,6 +267,44 @@
       </div>
     </section>
     <!-- End Clients Section Title -->
+    <section class="section">
+      <div class="row">
+        <div class="col">
+          <div class="section-title">
+            <h2 class="razer-overlapping-header"><span><span class="razer-overlapping-span1">OUR BLOGS</span><br><span>FEATURED<span class="span-razer">NEWS</span></span></span></h2>
+          </div>
+        </div>
+      </div>
+      {% for blog in blogs %}
+      <div class="row">
+        <div class="container razer-blog-container">
+          <div class="row">
+            <div class="col"><img class="razer-blog-image" src="{{blog.blog_image.url}}" alt=""></div>
+            <div class="col align-self-end">
+              <p class="razer-blog-text">{{blog.description_1|slice:"200"}}</p>
+              <h2 class="razer-blog-header">{{blog.title}}</h2>
+            </div>
+          </div>
+          <div class="row justify-content-end">
+            <div class="col-2">
+              <div class="razer-project-button-holder">
+                <a
+                  href="{% url 'detail_blog' blog.id %}"
+                  class="next-project-razer-styled-button"
+                  >READ MORE</a
+                >
+                <button
+                  class="next-project-extend-razer-styled-button"
+                ></button>
+              </div>
+            </div>
+            <hr class="razer-blog-hr">
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </section>
   </main>
   <!-- End #main -->
 {% endblock content %}

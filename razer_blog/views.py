@@ -3,6 +3,15 @@ from .models import Blog, BlogComment
 # Create your views here.
 
 
+def blog(request):
+    blogs = Blog.objects.all()
+    context = {
+        'title_name': 'Blog',
+        'blogs': blogs
+    }
+    return render(request, "blog.html", context)
+
+
 def detail_blog(request, b_id):
     blog = get_object_or_404(Blog, pk=b_id)
     next_blog = Blog.objects.filter(created__gt=blog.created).first()
@@ -27,4 +36,4 @@ def detail_blog(request, b_id):
         'prev_blog': prev_blog
     }
 
-    return render(request, "blog/blog.html", context)
+    return render(request, "blog/detail_blog.html", context)

@@ -17,4 +17,4 @@ def detail_project(request, p_id):
         'next_project': next_project,
         'prev_project': prev_project
     }
-    return render(request, "project/project.html", context)
+    return render(request, "project/detail_project.html", context)

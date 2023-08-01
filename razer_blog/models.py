@@ -15,6 +15,9 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        ordering = ['created']
+
 
 class BlogComment(models.Model):
     name = models.CharField('Name', max_length=50)

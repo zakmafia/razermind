@@ -27,4 +27,5 @@ urlpatterns = [
     path('service/', include('razer_service.urls')),
     path('project/', include('razer_project.urls')),
     path('shop/', include('razer_shop.urls')),
+    path('blog/', include('razer_blog.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
