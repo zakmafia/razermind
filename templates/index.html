@@ -71,7 +71,7 @@
               architecto, dolor ipsum soluta error iusto.
             </p>
             <div class="razer-button-container">
-              <a href="#" class="razer-styled-button">READ MORE</a>
+              <a href="{% url 'about' %}" class="razer-styled-button">READ MORE</a>
               <button class="extend-razer-styled-button"></button>
             </div>
 
@@ -94,29 +94,50 @@
         </ul>
 
         <div class="row" data-aos="fade-up" data-aos-delay="200">
-          {% comment %} {% for project in projects %}
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <a href="{% url 'detail_project' project.id %}">
-              <div class="portfolio-img">
-                <img src="{{project.project_image.url}}" class="img-fluid" alt="" />
-              </div>
-              <div class="portfolio-info">
-                <h4>{{project.name}}</h4>
-              </div>
-            </a>
-            </div>  
-          {% endfor %} {% endcomment %}
+
           <div class="razer-mockup-container">
-            <div class="razer-mockup-column-1">Hello</div>
-            <div class="razer-mockup-column-2">Hello</div>
-            <div class="razer-mockup-column-3">Hello</div>
-            <div class="razer-mockup-column-4">Hello</div>
+            <div class="razer-mockup-column-1">
+              <div class="container" style="background: url({{projects.0.project_image.url}}); background-size: cover; height: 100%;">
+                <div class="row" style="height: 100%;">
+                  <div class="col align-self-end">
+                    {{ projects.0.name }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="razer-mockup-column-2">
+              <div class="container" style="background: url({{projects.1.project_image.url}}); background-size: cover; height: 100%;">
+                <div class="row" style="height: 100%;">
+                  <div class="col align-self-end">
+                    {{ projects.1.name }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="razer-mockup-column-3">
+              <div class="container" style="background: url({{projects.2.project_image.url}}); background-size: cover; height: 100%;">
+                <div class="row" style="height: 100%;">
+                  <div class="col align-self-end">
+                    {{ projects.2.name }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="razer-mockup-column-4">
+              <div class="container" style="background: url({{projects.3.project_image.url}}); background-size: cover; height: 100%;">
+                <div class="row" style="height: 100%;">
+                  <div class="col align-self-end">
+                    {{ projects.3.name }}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        {% comment %} <div class="razer-button-container">
-          <a href="#" class="razer-styled-button">VIEW MORE</a>
+        <div class="razer-button-container">
+          <a href="{% url 'project' %}" class="razer-styled-button">VIEW MORE</a>
           <button class="extend-razer-styled-button"></button>
-        </div> {% endcomment %}
+        </div>
       </div>
     </section>
     <!-- End Portfolio Section -->
@@ -275,7 +296,7 @@
           </div>
         </div>
       </div>
-      {% for blog in blogs %}
+      {% for blog in blogs|slice:":3" %}
       <div class="row">
         <div class="container razer-blog-container">
           <div class="row">
@@ -303,6 +324,10 @@
         </div>
       </div>
       {% endfor %}
+      <div class="razer-button-container">
+        <a href="{% url 'blog' %}" class="razer-styled-button">VIEW MORE</a>
+        <button class="extend-razer-styled-button"></button>
+      </div>
 
     </section>
   </main>

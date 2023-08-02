@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="section-bg">
+<br>
+</section>
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2 class="razer-overlapping-header"><span><span class="razer-overlapping-span2">OUR PORTFOLIO</span><br><span>FEATURED <span class="span-razer">PROJECTS</span></span></span></h2>
+      </div>
+
+      <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+        <li data-filter=".filter-app">BRANDING</li>
+        <li data-filter=".filter-card">WEBSITES</li>
+        <li data-filter=".filter-web">SOCIAL MEDIA</li>
+      </ul>
+
+      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+        {% for project in projects %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <a href="{% url 'detail_project' project.id %}">
+            <div class="portfolio-img">
+              <img src="{{project.project_image.url}}" class="img-fluid" alt="" />
+            </div>
+            <div class="portfolio-info">
+              <h4>{{project.name}}</h4>
+            </div>
+          </a>
+          </div>  
+        {% endfor %} 
+      </div>
+    </div>
+  </section>
+{% endblock content %}

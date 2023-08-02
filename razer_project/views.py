@@ -5,6 +5,15 @@ from .forms import ProjectForm
 # Create your views here.
 
 
+def project(request):
+    projects = Project.objects.all()
+    context = {
+        'title_name': 'Project',
+        'projects': projects
+    }
+    return render(request, 'project/project.html', context)
+
+
 def detail_project(request, p_id):
     project = get_object_or_404(Project, pk=p_id)
     project_photos = ProjectPhoto.objects.filter(project=project.id)

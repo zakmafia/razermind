@@ -897,13 +897,13 @@
     ". . .";
 }
 
-.razer-mockup-column-1 { grid-area: razer-mockup-column-1; background-color: blue; height: 50vh; }
+.razer-mockup-column-1 { grid-area: razer-mockup-column-1; height: 50vh; }
 
-.razer-mockup-column-2 { grid-area: razer-mockup-column-2; background-color: green; }
+.razer-mockup-column-2 { grid-area: razer-mockup-column-2; }
 
-.razer-mockup-column-3 { grid-area: razer-mockup-column-3; background-color: yellow; }
+.razer-mockup-column-3 { grid-area: razer-mockup-column-3; }
 
-.razer-mockup-column-4 { grid-area: razer-mockup-column-4; background-color: orange; }
+.razer-mockup-column-4 { grid-area: razer-mockup-column-4; }
 
 .project-row>*{
   padding-left: 0px;

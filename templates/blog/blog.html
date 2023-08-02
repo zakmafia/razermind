@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="section">
+<br>
+</section>
+<section class="section">
+    <div class="row">
+      <div class="col">
+        <div class="section-title">
+          <h2 class="razer-overlapping-header"><span><span class="razer-overlapping-span1">OUR BLOGS</span><br><span>FEATURED<span class="span-razer">NEWS</span></span></span></h2>
+        </div>
+      </div>
+    </div>
+    {% for blog in blogs %}
+    <div class="row">
+      <div class="container razer-blog-container">
+        <div class="row">
+          <div class="col"><img class="razer-blog-image" src="{{blog.blog_image.url}}" alt=""></div>
+          <div class="col align-self-end">
+            <p class="razer-blog-text">{{blog.description_1|slice:"200"}}</p>
+            <h2 class="razer-blog-header">{{blog.title}}</h2>
+          </div>
+        </div>
+        <div class="row justify-content-end">
+          <div class="col-2">
+            <div class="razer-project-button-holder">
+              <a
+                href="{% url 'detail_blog' blog.id %}"
+                class="next-project-razer-styled-button"
+                >READ MORE</a
+              >
+              <button
+                class="next-project-extend-razer-styled-button"
+              ></button>
+            </div>
+          </div>
+          <hr class="razer-blog-hr">
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </section>
+{% endblock content %}

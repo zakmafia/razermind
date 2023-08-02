@@ -9,7 +9,7 @@ def blog(request):
         'title_name': 'Blog',
         'blogs': blogs
     }
-    return render(request, "blog.html", context)
+    return render(request, "blog/blog.html", context)
 
 
 def detail_blog(request, b_id):

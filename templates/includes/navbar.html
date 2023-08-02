@@ -146,14 +146,14 @@
         <li>
           <a
             class="nav-link scrollto {% if title_name == 'Portfolio' %}active{%endif%}"
-            href="#portfolio"
+            href="{% url 'project' %}"
             >PORTFOLIO</a
           >
         </li>
         <li>
           <a
             class="nav-link scrollto {% if title_name == 'Blog' %}active{%endif%}"
-            href="#"
+            href="{% url 'blog' %}"
             >BLOG</a
           >
         </li>
