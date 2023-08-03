@@ -94,45 +94,74 @@
         </ul>
 
         <div class="row" data-aos="fade-up" data-aos-delay="200">
-
+          {% if projects %}
           <div class="razer-mockup-container">
             <div class="razer-mockup-column-1">
-              <div class="container" style="background: url({{projects.0.project_image.url}}); background-size: cover; height: 100%;">
-                <div class="row" style="height: 100%;">
+              <div class="container mockup-image-holder" style="background: url({{projects.0.project_image.url}}); background-size: cover; height: 100%;">
+                <div class="row">
                   <div class="col align-self-end">
-                    {{ projects.0.name }}
+                    <div class="container razer-project-title-container">
+                      <h3 class="razer-project-title-header">{{projects.0.name}}</h3>
+                      <p class="razer-project-p">BRANDING / WEBSITE</p>
+                      <div class="service-razer-button-container">
+                        <a href="{% url 'detail_project' projects.0.id %}" class="razer-styled-button">VIEW MORE</a>
+                        <button class="extend-razer-styled-button"></button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="razer-mockup-column-2">
-              <div class="container" style="background: url({{projects.1.project_image.url}}); background-size: cover; height: 100%;">
-                <div class="row" style="height: 100%;">
+              <div class="container mockup-image-holder" style="background: url({{projects.1.project_image.url}}); background-size: cover; height: 100%;">
+                <div class="row">
                   <div class="col align-self-end">
-                    {{ projects.1.name }}
+                    <div class="container razer-project-title-container">
+                      <h3 class="razer-project-title-header">{{projects.1.name}}</h3>
+                      <p class="razer-project-p">BRANDING / WEBSITE</p>
+                      <div class="service-razer-button-container">
+                        <a href="{% url 'detail_project' projects.1.id %}" class="razer-styled-button">VIEW MORE</a>
+                        <button class="extend-razer-styled-button"></button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="razer-mockup-column-3">
-              <div class="container" style="background: url({{projects.2.project_image.url}}); background-size: cover; height: 100%;">
-                <div class="row" style="height: 100%;">
+              <div class="container mockup-image-holder" style="background: url({{projects.2.project_image.url}}); background-size: cover; height: 100%;">
+                <div class="row">
                   <div class="col align-self-end">
-                    {{ projects.2.name }}
+                    <div class="container razer-project-title-container">
+                      <h3 class="razer-project-title-header">{{projects.2.name}}</h3>
+                      <p class="razer-project-p">BRANDING / WEBSITE</p>
+                      <div class="service-razer-button-container">
+                        <a href="{% url 'detail_project' projects.2.id %}" class="razer-styled-button">VIEW MORE</a>
+                        <button class="extend-razer-styled-button"></button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="razer-mockup-column-4">
-              <div class="container" style="background: url({{projects.3.project_image.url}}); background-size: cover; height: 100%;">
-                <div class="row" style="height: 100%;">
+              <div class="container mockup-image-holder" style="background: url({{projects.3.project_image.url}}); background-size: cover; height: 100%;">
+                <div class="row">
                   <div class="col align-self-end">
-                    {{ projects.3.name }}
+                    <div class="container razer-project-title-container">
+                      <h3 class="razer-project-title-header">{{projects.3.name}}</h3>
+                      <p class="razer-project-p">BRANDING / WEBSITE</p>
+                      <div class="service-razer-button-container">
+                        <a href="{% url 'detail_project' projects.3.id %}" class="razer-styled-button">VIEW MORE</a>
+                        <button class="extend-razer-styled-button"></button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          {% endif %}
         </div>
         <div class="razer-button-container">
           <a href="{% url 'project' %}" class="razer-styled-button">VIEW MORE</a>

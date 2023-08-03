@@ -19,7 +19,8 @@ class Project(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
     description = models.TextField('Description', blank=True, null=True)
-    project_image = models.ImageField(null=False, blank=False)
+    project_image = models.ImageField(null=True, blank=True)
+    tumb_image = models.ImageField(null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

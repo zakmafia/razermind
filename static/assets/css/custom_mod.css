@@ -885,6 +885,40 @@
 /* End Razer About page */
 
 /* Razer Project */
+
+.razer-mockup-container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px 12px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "razer-mockup-column-1 razer-mockup-column-1 razer-mockup-column-2"
+    "razer-mockup-column-3 razer-mockup-column-4 razer-mockup-column-2"
+    ". . .";
+}
+
+.razer-mockup-column-1 { grid-area: razer-mockup-column-1; height: 50vh; border-radius: 2%;}
+
+.razer-mockup-column-2 { grid-area: razer-mockup-column-2; border-radius: 2%;}
+
+.razer-mockup-column-3 { grid-area: razer-mockup-column-3; border-radius: 2%;}
+
+.razer-mockup-column-4 { grid-area: razer-mockup-column-4; border-radius: 2%;}
+
+.razer-project-title-container{
+  padding: 30px;
+}
+
+.razer-project-title-header{
+  color: #f2f2f2;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.razer-project-p{
+  color: #e3a325;
+}
+
 .project-row>*{
   padding-left: 0px;
   padding-right: 0px;
@@ -1030,6 +1064,14 @@
 }
 
 /* Razer Blog */
+.razer-blog-text {
+  color: #f2f2f2;
+}
+
+.razer-blog-header {
+  color: #f2f2f2;
+}
+
 .razer-blog-container{
   width: 70%;
   height: 70vh;
@@ -1038,6 +1080,13 @@
 .razer-blog-image{
   height: 50vh;
   object-fit: cover;
+}
+
+.razer-blog-hr{
+  max-width: 100%;
+  border: 1px solid #e3a325;
+  opacity: 0.7;
+  margin: 20px 0;
 }
 
 .blog-extend-razer-styled-button {
