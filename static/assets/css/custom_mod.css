@@ -899,11 +899,27 @@
 
 .razer-mockup-column-1 { grid-area: razer-mockup-column-1; height: 50vh; border-radius: 2%;}
 
-.razer-mockup-column-2 { grid-area: razer-mockup-column-2; border-radius: 2%;}
+.razer-mockup-column-2 { grid-area: razer-mockup-column-2; }
 
-.razer-mockup-column-3 { grid-area: razer-mockup-column-3; border-radius: 2%;}
+.razer-mockup-column-3 { grid-area: razer-mockup-column-3; }
 
-.razer-mockup-column-4 { grid-area: razer-mockup-column-4; border-radius: 2%;}
+.razer-mockup-column-4 { grid-area: razer-mockup-column-4; }
+
+.razer-mockup-container .row{
+  height: 100%;
+}
+
+.razer-mockup-container .mockup-image-holder{
+  border-radius: 2%;
+  transition: all 0.2s;
+  opacity: 0.6;
+}
+
+.razer-mockup-container .mockup-image-holder:hover{
+  border-radius: 0%;
+  border: 1px solid #f2f2f2;
+  opacity: 1;
+}
 
 .razer-project-title-container{
   padding: 30px;
