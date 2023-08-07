@@ -619,7 +619,7 @@ section {
 --------------------------------------------------------------*/
 .clients {
   padding: 12px 0;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .clients img {

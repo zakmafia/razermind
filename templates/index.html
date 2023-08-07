@@ -172,7 +172,7 @@
     <!-- End Portfolio Section -->
 
     <!-- ======= Clients Section Title ======= -->
-    <section id="clients" class="clients">
+    <section id="clients" class="clients razer-clients">
       <div class="container">
         <div class="row">
           <div class="section-title">
@@ -321,7 +321,7 @@
       <div class="row">
         <div class="col">
           <div class="section-title">
-            <h2 class="razer-overlapping-header"><span><span class="razer-overlapping-span1">OUR BLOGS</span><br><span>FEATURED<span class="span-razer">NEWS</span></span></span></h2>
+            <h2 class="razer-overlapping-header"><span><span class="razer-overlapping-span1">OUR BLOGS</span><br><span>FEATURED<span class="span-razer"> NEWS</span></span></span></h2>
           </div>
         </div>
       </div>
@@ -336,8 +336,8 @@
             </div>
           </div>
           <div class="row justify-content-end">
-            <div class="col-2">
-              <div class="razer-project-button-holder">
+            <div class="col-lg-2 col-sm-7 col-md-5">
+              <div class="razer-readmore-button-holder">
                 <a
                   href="{% url 'detail_blog' blog.id %}"
                   class="next-project-razer-styled-button"
@@ -353,11 +353,16 @@
         </div>
       </div>
       {% endfor %}
-      <div class="razer-button-container">
-        <a href="{% url 'blog' %}" class="razer-styled-button">VIEW MORE</a>
-        <button class="extend-razer-styled-button"></button>
+      <div class="razer-blog-viewmore-container">
+        <div class="row">
+          <div class="col">
+            <div class="razer-button-container">
+              <a href="{% url 'blog' %}" class="razer-styled-button">VIEW MORE</a>
+              <button class="extend-razer-styled-button"></button>
+            </div>
+          </div>
+        </div>
       </div>
-
     </section>
   </main>
   <!-- End #main -->
