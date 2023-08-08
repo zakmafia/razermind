@@ -12,14 +12,14 @@
       </div>
 
       <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-        <li data-filter=".filter-app">BRANDING</li>
-        <li data-filter=".filter-card">WEBSITES</li>
-        <li data-filter=".filter-web">SOCIAL MEDIA</li>
+        <li data-filter=".filter-branding">BRANDING</li>
+        <li data-filter=".filter-websites">WEBSITES</li>
+        <li data-filter=".filter-social">SOCIAL MEDIA</li>
       </ul>
 
       <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
         {% for project in projects %}
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-branding">
             <a href="{% url 'detail_project' project.id %}">
             <div class="portfolio-img">
               <img src="{{project.project_image.url}}" class="img-fluid" alt="" />

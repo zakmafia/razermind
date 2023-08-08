@@ -1104,7 +1104,8 @@
 
 .razer-blog-container{
   width: 70%;
-  height: 90vh;
+  height: 70%;
+  margin-top: 40px;
 }
 
 .razer-blog-image{
@@ -1181,6 +1182,40 @@
 .razer-readmore-button-holder {
   width: 158px;
   display: flex;
+}
+
+.razer-blog .razer-blog-url-img {
+  object-fit: cover;
+  max-width: 60%;
+  transition: all 0.4s ease-in-out;
+  display: inline-block;
+  padding: 15px 0;
+  filter: grayscale(100);
+  margin-bottom: 30px;
+}
+
+.razer-blog .razer-blog-url-img:hover {
+  filter: none;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .razer-blog .razer-blog-url-img {
+    max-width: 40%;
+  }
+}
+
+.razer-blog-social-links {
+  width: 30px;
+  height: 30px;
+  transition: all 0.4s ease-in-out;
+  filter: grayscale(100);
+  margin: 0px 10px;
+}
+
+.razer-blog-social-links:hover {
+  filter: none;
+  transform: scale(1.1);
 }
 /* End Razer Blog */
 

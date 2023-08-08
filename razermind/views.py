@@ -1,15 +1,17 @@
 from django.shortcuts import render, redirect
-from razer_project.models import Project, UserProject
+from razer_project.models import Project, UserProject, Tag
 from razer_blog.models import Blog
 
 
 def index(request):
     projects = Project.objects.all()
+    tags = Tag.objects.all()
     blogs = Blog.objects.all()
 
     context = {
         'title_name': 'Index',
         'projects': projects,
+        'tags': tags,
         'blogs': blogs,
     }
     return render(request, 'index.html', context)

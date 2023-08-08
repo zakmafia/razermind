@@ -5,6 +5,7 @@ from django.db import models
 
 class Tag(models.Model):
     name = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200, blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
@@ -15,7 +16,8 @@ class Tag(models.Model):
 
 class Project(models.Model):
     name = models.CharField('Name', max_length=50)
-    tags = models.ManyToManyField(Tag, blank=True)
+    tags = models.ForeignKey(
+        Tag, blank=True, on_delete=models.SET_NULL, null=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
     description = models.TextField('Description', blank=True, null=True)

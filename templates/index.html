@@ -140,23 +140,23 @@
         <div class="section-title">
           <h2 class="razer-overlapping-header"><span><span class="razer-overlapping-span2">OUR PORTFOLIO</span><br><span>FEATURED <span class="span-razer">PROJECTS</span></span></span></h2>
         </div>
-
+        {% if tags.count == 3 %}
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-          <li data-filter=".filter-app">BRANDING</li>
-          <li data-filter=".filter-card">WEBSITES</li>
-          <li data-filter=".filter-web">SOCIAL MEDIA</li>
+          {% for tag in tags %}
+          <li data-filter=".filter-{{tag.slug}}">{{tag.name}}</li>
+          {% endfor %}
         </ul>
-
-        <div class="row" data-aos="fade-up" data-aos-delay="200">
+        {% endif %}
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
           {% if projects %}
-          <div class="razer-mockup-container">
+          <div class="razer-mockup-container filter-{{tags.0.slug}} portfolio-item">
             <div class="razer-mockup-column-1">
               <div class="container mockup-image-holder" style="background: url({{projects.0.project_image.url}}); background-size: cover; height: 100%;">
                 <div class="row">
                   <div class="col align-self-end">
                     <div class="container razer-project-title-container">
                       <h3 class="razer-project-title-header">{{projects.0.name}}</h3>
-                      <p class="razer-project-p">BRANDING / WEBSITE</p>
+                      <p class="razer-project-p">{{projects.0.tags.name}}</p>
                       <div class="service-razer-button-container">
                         <a href="{% url 'detail_project' projects.0.id %}" class="razer-styled-button">VIEW MORE</a>
                         <button class="extend-razer-styled-button"></button>
@@ -172,7 +172,7 @@
                   <div class="col align-self-end">
                     <div class="container razer-project-title-container">
                       <h3 class="razer-project-title-header">{{projects.1.name}}</h3>
-                      <p class="razer-project-p">BRANDING / WEBSITE</p>
+                      <p class="razer-project-p">{{projects.1.tags.name}}</p>
                       <div class="service-razer-button-container">
                         <a href="{% url 'detail_project' projects.1.id %}" class="razer-styled-button">VIEW MORE</a>
                         <button class="extend-razer-styled-button"></button>
@@ -188,7 +188,7 @@
                   <div class="col align-self-end">
                     <div class="container razer-project-title-container">
                       <h3 class="razer-project-title-header">{{projects.2.name}}</h3>
-                      <p class="razer-project-p">BRANDING / WEBSITE</p>
+                      <p class="razer-project-p">{{projects.2.tags.name}}</p>
                       <div class="service-razer-button-container">
                         <a href="{% url 'detail_project' projects.2.id %}" class="razer-styled-button">VIEW MORE</a>
                         <button class="extend-razer-styled-button"></button>
@@ -204,7 +204,7 @@
                   <div class="col align-self-end">
                     <div class="container razer-project-title-container">
                       <h3 class="razer-project-title-header">{{projects.3.name}}</h3>
-                      <p class="razer-project-p">BRANDING / WEBSITE</p>
+                      <p class="razer-project-p">{{projects.3.tags.name}}</p>
                       <div class="service-razer-button-container">
                         <a href="{% url 'detail_project' projects.3.id %}" class="razer-styled-button">VIEW MORE</a>
                         <button class="extend-razer-styled-button"></button>

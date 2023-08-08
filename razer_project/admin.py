@@ -2,7 +2,13 @@ from django.contrib import admin
 from .models import Tag, Project, ProjectPhoto, UserProject
 # Register your models here.
 
-admin.site.register(Tag)
+
+class TagAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name',)}
+    list_display = ('name', )
+
+
+admin.site.register(Tag, TagAdmin)
 admin.site.register(Project)
 admin.site.register(ProjectPhoto)
 admin.site.register(UserProject)

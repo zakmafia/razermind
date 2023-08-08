@@ -474,6 +474,12 @@
 }
 /* End Overlapping Text */
 
+/* Razer Clients */
+.razer-clients{
+  text-align: center;
+}
+/* End Razer Clients */
+
 /* Razer service containers */
 .razer-service-container {
   width: 100%;
@@ -506,8 +512,6 @@
 }
 
 .razer-service-p-even {
-  margin-left: calc(50% - 150px);
-  max-width: 1000px;
   color: #f2f2f2;
 }
 
@@ -517,7 +521,7 @@
 }
 
 .razer-huge-text {
-  font-size: 20rem;
+  font-size: 18rem;
   line-height: 1;
   padding: 0 !important;
   margin: 0 !important;
@@ -525,7 +529,7 @@
 }
 
 .razer-huge-text-2 {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 200;
   line-height: 1;
   margin-bottom: 10px;
@@ -626,13 +630,9 @@
   --hover-btn-color: #fac921;
   --default-btn-color: #fff;
   --font-size: 16px;
-  /* 👆 this field should not be empty */
   --font-weight: 600;
   --font-family: Menlo, Roboto Mono, monospace;
-  /* 👆 this field should not be empty */
 }
-
-/* button settings 👆 */
 
 .razer-shop-ui-btn {
   box-sizing: border-box;
@@ -894,7 +894,21 @@
   grid-template-areas:
     "razer-mockup-column-1 razer-mockup-column-1 razer-mockup-column-2"
     "razer-mockup-column-3 razer-mockup-column-4 razer-mockup-column-2"
-    ". . .";
+}
+
+@media only screen and (max-width: 1000px) {
+  .razer-mockup-container {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr; 
+    gap: 12px 12px; 
+    grid-template-areas: 
+      "razer-mockup-column-1"
+      "razer-mockup-column-2"
+      "razer-mockup-column-3"
+      "razer-mockup-column-4"; 
+  }
 }
 
 .razer-mockup-column-1 { grid-area: razer-mockup-column-1; height: 50vh; border-radius: 2%;}
@@ -1090,7 +1104,8 @@
 
 .razer-blog-container{
   width: 70%;
-  height: 70vh;
+  height: 70%;
+  margin-top: 40px;
 }
 
 .razer-blog-image{
@@ -1162,6 +1177,11 @@
 }
 .next-blog-razer-styled-button:hover {
   color: #fff;
+}
+
+.razer-readmore-button-holder {
+  width: 158px;
+  display: flex;
 }
 /* End Razer Blog */
 
