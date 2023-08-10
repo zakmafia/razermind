@@ -68,11 +68,9 @@
             </div>
             <div class="razer-project-link-container">
               <p>
-                <span class="span-razer">RE-BRANDING </span
-                ><span class="razer-project-text"> / </span
-                ><span class="span-razer">SOCIAL MEDIA </span
-                ><span class="razer-project-text"> / </span
-                ><span class="span-razer">3D CHARACTERS</span>
+                {% for tag in project.tags.all %}
+                <span class="span-razer"> <span class="span-project-tag"># {{tag}}</span>  </span>
+                {% endfor %}
               </p>
             </div>
             <div class="razer-project-button-container">

@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
 from .models import Blog, BlogComment
 # Create your views here.
 
@@ -28,6 +29,11 @@ def detail_blog(request, b_id):
             blog=blog
         )
         usercomment.save()
+        messages.success(
+            request, 'You have successfully commented on this blog article!')
+    else:
+        messages.error(
+            request, 'Something went wrong!')
 
     context = {
         'blog': blog,

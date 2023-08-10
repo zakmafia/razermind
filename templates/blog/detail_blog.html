@@ -82,6 +82,7 @@
         <form action="" method="POST">
           {% csrf_token %}
           <div class="razer-new-project-container">
+            {% include 'includes/alerts.html' %}
             <h1 class="razer-new-project-header">
               <span class="span-razer">COMMENTS</span>
             </h1>

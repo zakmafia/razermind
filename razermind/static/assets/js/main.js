@@ -209,6 +209,7 @@
     if (portfolioContainer) {
       let portfolioIsotope = new Isotope(portfolioContainer, {
         itemSelector: ".portfolio-item",
+        filter: ".filter-branding"
       });
 
       let portfolioFilters = select("#portfolio-flters li", true);
@@ -345,6 +346,8 @@
     $("#sub-1").removeClass("razer-sidenav-submenu-active");
     $("#sub-2").removeClass("razer-sidenav-submenu-active");
   });
- 
+  setTimeout(function(){
+    $('#messages').fadeOut('slow')
+}, 4000);
   
 })();

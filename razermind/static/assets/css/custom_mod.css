@@ -1000,6 +1000,11 @@
   display: flex;
 }
 
+.razer-viewmore-button-holder{
+  width: 155px;
+  display: flex;
+}
+
 .razer-project-header-text{
   font-size: 4em;
   margin-top: 40px;
@@ -1067,6 +1072,11 @@
 .next-project-razer-styled-button:hover {
   color: #fff;
 }
+
+.span-project-tag {
+  margin-right: 10px;
+}
+
 /* End Razer Project */
 
 /* Razer Footer Space */

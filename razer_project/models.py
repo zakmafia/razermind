@@ -16,8 +16,8 @@ class Tag(models.Model):
 
 class Project(models.Model):
     name = models.CharField('Name', max_length=50)
-    tags = models.ForeignKey(
-        Tag, blank=True, on_delete=models.SET_NULL, null=True)
+    tags = models.ManyToManyField(
+        Tag, blank=True)
     id = models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
     description = models.TextField('Description', blank=True, null=True)
