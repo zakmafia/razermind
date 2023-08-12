@@ -12,12 +12,26 @@
       </div>
 
       <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-        <li data-filter=".filter-branding" class="filter-active">BRANDING</li>
+        <li data-filter=".filter-all" class="filter-active">ALL</li>
+        <li data-filter=".filter-branding">BRANDING</li>
         <li data-filter=".filter-websites">WEBSITES</li>
         <li data-filter=".filter-social-media">SOCIAL MEDIA</li>
       </ul>
 
-      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+      <div class="row portfolio-container-tab" data-aos="fade-up" data-aos-delay="200">
+        {% for project in projects %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-all">
+            <a href="{% url 'detail_project' project.id %}">
+            <div class="portfolio-img">
+              <img src="{{project.project_image.url}}" class="img-fluid" alt="" />
+            </div>
+            <div class="portfolio-info">
+              <h3 class="razer-project-title-header">{{project.name}}</h3>
+              <p class="razer-project-p">{% for tag in project.tags.all %}<span class="span-project-tag"># {{tag}}</span>{% endfor %}</p>
+            </div>
+          </a>
+          </div>  
+        {% endfor %} 
         {% for project in projects_branding %}
           <div class="col-lg-4 col-md-6 portfolio-item filter-branding">
             <a href="{% url 'detail_project' project.id %}">
@@ -27,16 +41,6 @@
             <div class="portfolio-info">
               <h3 class="razer-project-title-header">{{project.name}}</h3>
               <p class="razer-project-p">{% for tag in project.tags.all %}<span class="span-project-tag"># {{tag}}</span>{% endfor %}</p>
-              <div class="razer-viewmore-button-holder">
-                <a
-                  href="{% url 'detail_project' project.id %}"
-                  class="next-project-razer-styled-button"
-                  >VIEW MORE</a
-                >
-                <button
-                  class="next-project-extend-razer-styled-button"
-                ></button>
-              </div>
             </div>
           </a>
           </div>  
@@ -50,16 +54,6 @@
           <div class="portfolio-info">
             <h3 class="razer-project-title-header">{{project.name}}</h3>
             <p class="razer-project-p">{% for tag in project.tags.all %}<span class="span-project-tag"># {{tag}}</span>{% endfor %}</p>
-            <div class="razer-viewmore-button-holder">
-              <a
-                href="{% url 'detail_project' project.id %}"
-                class="next-project-razer-styled-button"
-                >VIEW MORE</a
-              >
-              <button
-                class="next-project-extend-razer-styled-button"
-              ></button>
-            </div>
           </div>
         </a>
         </div> 
@@ -73,16 +67,6 @@
           <div class="portfolio-info">
             <h3 class="razer-project-title-header">{{project.name}}</h3>
             <p class="razer-project-p">{% for tag in project.tags.all %}<span class="span-project-tag"># {{tag}}</span>{% endfor %}</p>
-            <div class="razer-viewmore-button-holder">
-              <a
-                href="{% url 'detail_project' project.id %}"
-                class="next-project-razer-styled-button"
-                >VIEW MORE</a
-              >
-              <button
-                class="next-project-extend-razer-styled-button"
-              ></button>
-            </div>
           </div>
         </a>
         </div>  

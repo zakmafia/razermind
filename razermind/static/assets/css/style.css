@@ -1022,6 +1022,10 @@ section {
   height: 100vh;
 }
 
+.portfolio-container-tab {
+  height: 100vh;
+}
+
 @media only screen and (max-width: 1000px)  {
   .portfolio .portfolio-item {
     margin-bottom: 30px;
@@ -1042,7 +1046,7 @@ section {
 .portfolio .portfolio-item .portfolio-info {
   position: absolute;
   left: 30px;
-  top: 125px;
+  bottom: 0;
   z-index: 3;
   transition: all 0.3s;
   background: transparent;

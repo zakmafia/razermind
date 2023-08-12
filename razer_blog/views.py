@@ -1,5 +1,13 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
+# for blog comment
+from django.contrib.sites.shortcuts import get_current_site
+from django.template.loader import render_to_string
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes
+from django.contrib.auth.tokens import default_token_generator
+from django.core.mail import EmailMessage
+
 from .models import Blog, BlogComment
 # Create your views here.
 
@@ -28,13 +36,19 @@ def detail_blog(request, b_id):
             comment=comment,
             blog=blog
         )
-        usercomment.save()
-        messages.success(
-            request, 'You have successfully commented on this blog article!')
-    else:
-        messages.error(
-            request, 'Something went wrong!')
-
+        mail_subject = f'New Comment for blog - {blog.title}'
+        message = render_to_string('email/blog_comment.html', {
+            'name': name,
+            'email': email,
+            'comment': comment,
+            'title': blog.title
+        })
+        to_email = 'razermindstudio@gmail.com'
+        send_email = EmailMessage(mail_subject, message, to=[to_email])
+        if send_email.send():
+            usercomment.save()
+            messages.success(
+                request, 'You have successfully commented on this blog article!')
     context = {
         'blog': blog,
         'title_name': 'Blog',

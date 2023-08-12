@@ -12,6 +12,7 @@ from razer_blog.models import Blog
 
 
 def index(request):
+    projects = Project.objects.all()
     branding_tag = Tag.objects.filter(slug='branding')
     website_tag = Tag.objects.filter(slug='websites')
     social_media_tag = Tag.objects.filter(slug='social-media')
@@ -25,6 +26,7 @@ def index(request):
         'projects_branding': projects_branding,
         'projects_websites': projects_websites,
         'projects_social_media': projects_social_media,
+        'projects': projects,
         'blogs': blogs,
     }
     return render(request, 'index.html', context)
@@ -40,12 +42,18 @@ def about(request):
             email=email,
             description=description
         )
-        userproject.save()
-        messages.success(
+        mail_subject = f'New Project Request - {description}'
+        message = render_to_string('email/user_project.html', {
+            'name': name,
+            'email': email,
+            'description': description
+        })
+        to_email = 'razermindstudio@gmail.com'
+        send_email = EmailMessage(mail_subject, message, to=[to_email])
+        if send_email.send():
+            userproject.save()
+            messages.success(
             request, 'You have successfully created a New Project request!')
-    else:
-        messages.error(
-            request, 'Something went wrong!')
     context = {
         'title_name': 'About',
     }

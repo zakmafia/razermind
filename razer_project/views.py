@@ -6,6 +6,7 @@ from .forms import ProjectForm
 
 
 def project(request):
+    projects = Project.objects.all()
     branding_tag = Tag.objects.filter(slug='branding')
     website_tag = Tag.objects.filter(slug='websites')
     social_media_tag = Tag.objects.filter(slug='social-media')
@@ -16,7 +17,8 @@ def project(request):
         'title_name': 'Project',
         'projects_branding': projects_branding,
         'projects_websites': projects_websites,
-        'projects_social_media': projects_social_media
+        'projects_social_media': projects_social_media,
+        'projects': projects
     }
     return render(request, 'project/project.html', context)
 

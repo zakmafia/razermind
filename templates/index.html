@@ -148,7 +148,7 @@
         </ul>
   
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-          {% for project in projects_branding|slice:'4' %}
+          {% for project in projects_branding|slice:'3' %}
             <div class="col-lg-4 col-md-6 portfolio-item filter-branding">
               <a href="{% url 'detail_project' project.id %}">
               <div class="portfolio-img">
@@ -157,21 +157,11 @@
               <div class="portfolio-info">
                 <h3 class="razer-project-title-header">{{project.name}}</h3>
                 <p class="razer-project-p">{% for tag in project.tags.all %}<span class="span-project-tag"># {{tag}}</span>{% endfor %}</p>
-                <div class="razer-viewmore-button-holder">
-                  <a
-                    href="{% url 'detail_project' project.id %}"
-                    class="next-project-razer-styled-button"
-                    >VIEW MORE</a
-                  >
-                  <button
-                    class="next-project-extend-razer-styled-button"
-                  ></button>
-                </div>
               </div>
             </a>
             </div>  
           {% endfor %} 
-          {% for project in projects_websites|slice:'4' %}
+          {% for project in projects_websites|slice:'3' %}
           <div class="col-lg-4 col-md-6 portfolio-item filter-websites">
             <a href="{% url 'detail_project' project.id %}">
             <div class="portfolio-img">
@@ -180,21 +170,11 @@
             <div class="portfolio-info">
               <h3 class="razer-project-title-header">{{project.name}}</h3>
               <p class="razer-project-p">{% for tag in project.tags.all %}<span class="span-project-tag"># {{tag}}</span>{% endfor %}</p>
-              <div class="razer-viewmore-button-holder">
-                <a
-                  href="{% url 'detail_project' project.id %}"
-                  class="next-project-razer-styled-button"
-                  >VIEW MORE</a
-                >
-                <button
-                  class="next-project-extend-razer-styled-button"
-                ></button>
-              </div>
             </div>
           </a>
           </div> 
           {% endfor %} 
-          {% for project in projects_social_media|slice:'4' %}
+          {% for project in projects_social_media|slice:'3' %}
           <div class="col-lg-4 col-md-6 portfolio-item filter-social-media">
             <a href="{% url 'detail_project' project.id %}">
             <div class="portfolio-img">
@@ -203,16 +183,6 @@
             <div class="portfolio-info">
               <h3 class="razer-project-title-header">{{project.name}}</h3>
               <p class="razer-project-p">{% for tag in project.tags.all %}<span class="span-project-tag"># {{tag}}</span>{% endfor %}</p>
-              <div class="razer-viewmore-button-holder">
-                <a
-                  href="{% url 'detail_project' project.id %}"
-                  class="next-project-razer-styled-button"
-                  >VIEW MORE</a
-                >
-                <button
-                  class="next-project-extend-razer-styled-button"
-                ></button>
-              </div>
             </div>
           </a>
           </div>  

@@ -37,13 +37,13 @@
                           >
                         </h2>
                       </li>
-                      <li><a href="#brand-strategy">BRAND STRATEGY</a></li>
+                      <li><a href="{% url 'service' %}#brand-strategy">BRAND STRATEGY</a></li>
                       <hr />
-                      <li><a href="#brand-identity">BRAND IDENTITY DESIGN</a></li>
+                      <li><a href="{% url 'service' %}#brand-identity">BRAND IDENTITY DESIGN</a></li>
                       <hr />
-                      <li><a href="#website-design">WEBSITE DESIGN AND DEVELOPMENT</a></li>
+                      <li><a href="{% url 'service' %}#website-design">WEBSITE DESIGN AND DEVELOPMENT</a></li>
                       <hr />
-                      <li><a href="#digital-marketing">DIGITAL MARKETING</a></li>
+                      <li><a href="{% url 'service' %}#digital-marketing">DIGITAL MARKETING</a></li>
                       <hr />
                     </ul>
                   </div>
@@ -60,8 +60,8 @@
           <div class="razer-sidenav-item-holder">
             <div class="razer-sidenav-item-border">
               <li>
-                <a class="razer-sidenav-item" id="side-2" href="#">PORTFOLIO</a>
-                <div class="razer-sidenav-submenu" id="sub-2">
+                <a class="razer-sidenav-item" id="side-2" href="{% url 'project' %}">PORTFOLIO</a>
+                <!-- <div class="razer-sidenav-submenu" id="sub-2">
                   <div class="razer-sidenav-submenu-style">
                     <ul>
                       <li><a href="">TEST</a></li>
@@ -70,7 +70,7 @@
                       <li><a href="">TEST</a></li>
                     </ul>
                   </div>
-                </div>
+                </div> -->
               </li>
             </div>
             <i
@@ -82,7 +82,7 @@
           </div>
           <div class="razer-sidenav-item-holder">
             <div class="razer-sidenav-item-border">
-              <li><a class="razer-sidenav-item" href="#team">BLOG</a></li>
+              <li><a class="razer-sidenav-item" href="{% url 'blog' %}">BLOG</a></li>
             </div>
             <i
               ><img
@@ -93,7 +93,7 @@
           </div>
           <div class="razer-sidenav-item-holder">
             <div class="razer-sidenav-item-border">
-              <li><a class="razer-sidenav-item" href="#team">ABOUT US</a></li>
+              <li><a class="razer-sidenav-item" href="{% url 'about' %}">ABOUT US</a></li>
             </div>
             <i
               ><img

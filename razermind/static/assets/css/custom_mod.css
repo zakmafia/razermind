@@ -452,6 +452,92 @@
   opacity: 1;
 }
 
+@media only screen and (max-width: 1000px) {
+  .offcanvas {
+    width: 30% !important;
+  }
+  .razer-sidenav-item {
+    font-size: 20px;
+    color: #f2f2f2;
+  }
+  .razer-sidenav-item-border {
+    border-bottom: 2px solid #e3a325;
+  }
+  .razer-sidenav-icon {
+    display: none; 
+  }
+  .razer-sidenav-item-holder i {
+    padding: 0;
+  }
+  .razer-sidenav-submenu {
+    display: none;
+    position: fixed;
+    top: 50%;
+    right: 15%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background-color: transparent;
+    height: 250px;
+    z-index: -99999;
+  }
+  .razer-sidenav-submenu-style .sub-span {
+    font-size: 35px;
+    color: #f2f2f2;
+  }
+  
+  .razer-sidenav-submenu-style a {
+    font-size: 20px;
+    color: #f2f2f2;
+  }
+  
+  .razer-sidenav-submenu-style hr {
+    border: 2px solid #e3a325;
+    width: 50px;
+    margin: auto;
+    opacity: 1;
+  }
+  .razer-sidenav-footer-text {
+    font-size: 10px;
+  }
+  
+}
+
+@media only screen and (max-width: 700px) {
+  .offcanvas {
+    width: 45% !important;
+  }
+  .razer-sidenav-submenu {
+    display: none;
+    position: fixed;
+    top: 40%;
+    right: 15%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 330px;
+    background-color: transparent;
+    height: 200px;
+    z-index: -99999;
+  }
+  .razer-sidenav-submenu-style .sub-span {
+    font-size: 35px;
+    color: #f2f2f2;
+  }
+  
+  .razer-sidenav-submenu-style a {
+    font-size: 20px;
+    color: #f2f2f2;
+  }
+  
+  .razer-sidenav-submenu-style hr {
+    border: 2px solid #e3a325;
+    width: 50px;
+    margin: auto;
+    opacity: 1;
+  }
+  
+}
+
 /* Razer Overlapping Text */
 .razer-overlapping-header {
   line-height: 25px;
