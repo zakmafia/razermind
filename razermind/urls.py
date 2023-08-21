@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from django.views.generic import TemplateView
 from django.conf.urls.static import static
 from . import views
 
@@ -28,4 +29,6 @@ urlpatterns = [
     path('project/', include('razer_project.urls')),
     path('shop/', include('razer_shop.urls')),
     path('blog/', include('razer_blog.urls')),
+    path('<path:not_found>/',
+         TemplateView.as_view(template_name='404.html'), name='404'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

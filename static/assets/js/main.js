@@ -209,6 +209,39 @@
     if (portfolioContainer) {
       let portfolioIsotope = new Isotope(portfolioContainer, {
         itemSelector: ".portfolio-item",
+        filter: ".filter-branding"
+      });
+
+      let portfolioFilters = select("#portfolio-flters li", true);
+
+      on(
+        "click",
+        "#portfolio-flters li",
+        function (e) {
+          e.preventDefault();
+          portfolioFilters.forEach(function (el) {
+            el.classList.remove("filter-active");
+          });
+          this.classList.add("filter-active");
+
+          portfolioIsotope.arrange({
+            filter: this.getAttribute("data-filter"),
+          });
+          portfolioIsotope.on("arrangeComplete", function () {
+            AOS.refresh();
+          });
+        },
+        true
+      );
+    }
+  });
+
+  window.addEventListener("load", () => {
+    let portfolioContainer = select(".portfolio-container-tab");
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: ".portfolio-item",
+        filter: ".filter-all"
       });
 
       let portfolioFilters = select("#portfolio-flters li", true);
@@ -306,6 +339,22 @@
 
   // When the user clicks on the button, scroll to the top of the document
 
+  function displayBrandStrategy(){
+    console.log('clicked');
+  }
+
+  function displayBrandIdentity(){
+
+  }
+
+  function displayWebsite(){
+
+  }
+
+  function displayDigitalMarketing(){
+
+  }
+
   razerOffcanvas.addEventListener("show.bs.offcanvas", function () {
     mybutton.style.display = "none";
   });
@@ -345,6 +394,10 @@
     $("#sub-1").removeClass("razer-sidenav-submenu-active");
     $("#sub-2").removeClass("razer-sidenav-submenu-active");
   });
- 
+  setTimeout(function(){
+    $('#messages').fadeOut('slow')
+}, 4000);
+
+  
   
 })();

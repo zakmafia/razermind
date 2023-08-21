@@ -381,5 +381,14 @@
   setTimeout(function(){
     $('#messages').fadeOut('slow')
 }, 4000);
+
+  var brandStrategyDetail = document.getElementById("brand-strategy-detail");
+  var brandIdentityDetail = document.getElementById("brand-identity-detail");
+  var websiteDetail = document.getElementById("website-design-detail");
+  var digitalDetail = document.getElementById("digital-marketing-detail");
+  brandStrategyDetail.style.display = "none";
+  brandIdentityDetail.style.display = "none";
+  websiteDetail.style.display = "none";
+  digitalDetail.style.display = "none";
   
 })();
