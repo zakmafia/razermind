@@ -646,6 +646,7 @@
 .razer-service-scrollable-container{
   overflow-y: scroll;
   height: 350px;
+  margin-top: 50px;
 }
 .razer-service-scrollable-container::-webkit-scrollbar {
   width: 4px;
@@ -659,6 +660,25 @@
 .razer-service-scrollable-container::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px #f2f2f2; 
+}
+
+.razer-service-scrollable-header{
+  color: #e3a325;
+  font-size: 50px;
+  margin-top: -10px;
+  font-weight: 400;
+}
+
+.razer-service-scrollable-text{
+  color: #f2f2f2;
+}
+
+.razer-service-scrollable-header-even{
+  text-align: right;
+}
+
+.razer-service-scrollable-text-even{
+  text-align: right;
 }
 /* End razer service containers */
 
