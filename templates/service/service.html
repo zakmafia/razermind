@@ -108,11 +108,11 @@
 
           <div class="row" id="brand-strategy-detail">
             <div class="container razer-service-container" style="background: url({% static 'assets/img/service_1.jpg' %}); background-size: cover;">
-                <div class="razer-service-container-item">
+                <div class="razer-service-container-item animated animatedFadeInUp fadeInUp">
                     <h1 class="razer-service-section-header">BRAND STRATEGY</h1>
                     <p class="razer-service-p-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quo corrupti, dolores provident recusandae velit ducimus nam aspernatur fugiat necessitatibus ipsa error! Repellat suscipit molestiae laudantium blanditiis dignissimos, optio inventore vel iste consequatur reiciendis quae veniam harum accusantium adipisci nihil voluptate amet maxime ipsa voluptatem, sunt accusamus reprehenderit, voluptas id?</p>
                 </div>
-                <div class="row">
+                <div class="row animated animatedFadeInUp fadeInUp">
                   <div class="razer-service-scrollable-container">
                     <div class="row">
                       <div class="col-5"><h1 class="razer-service-scrollable-header">CONDUCT RESEARCH</h1></div>
@@ -193,11 +193,11 @@
 
         <div class="row" id="brand-identity-detail">
           <div class="container razer-service-container" style="background: url({% static 'assets/img/service_2.jpg' %}); background-size: cover;">
-            <div class="razer-service-container-item">
+            <div class="razer-service-container-item animated animatedFadeInUp fadeInUp">
               <h1 class="razer-service-section-header">BRAND IDENTITY</h1>
               <p class="razer-service-p-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quo corrupti, dolores provident recusandae velit ducimus nam aspernatur fugiat necessitatibus ipsa error! Repellat suscipit molestiae laudantium blanditiis dignissimos, optio inventore vel iste consequatur reiciendis quae veniam harum accusantium adipisci nihil voluptate amet maxime ipsa voluptatem, sunt accusamus reprehenderit, voluptas id?</p>
             </div>
-            <div class="row">
+            <div class="row animated animatedFadeInUp fadeInUp">
               <div class="razer-service-scrollable-container">
                 <div class="row">
                   <div class="col-5"><h1 class="razer-service-scrollable-header">CONDUCT RESEARCH</h1></div>
@@ -269,11 +269,11 @@
 
         <div class="row" id="website-design-detail">
           <div class="container razer-service-container" style="background: url({% static 'assets/img/service_3.jpg' %}); background-size: cover;">
-              <div class="razer-service-container-item">
+              <div class="razer-service-container-item animated animatedFadeInUp fadeInUp">
                 <h1 class="razer-service-section-header">WEBSITE DESIGN & DEV</h1>
                 <p class="razer-service-p-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quo corrupti, dolores provident recusandae velit ducimus nam aspernatur fugiat necessitatibus ipsa error! Repellat suscipit molestiae laudantium blanditiis dignissimos, optio inventore vel iste consequatur reiciendis quae veniam harum accusantium adipisci nihil voluptate amet maxime ipsa voluptatem, sunt accusamus reprehenderit, voluptas id?</p>
               </div>
-              <div class="row">
+              <div class="row animated animatedFadeInUp fadeInUp">
                 <div class="razer-service-scrollable-container">
                   <div class="row">
                     <div class="col-5"><h1 class="razer-service-scrollable-header">CONDUCT RESEARCH</h1></div>
@@ -351,11 +351,11 @@
 
         <div class="row" id="digital-marketing-detail">
           <div class="container razer-service-container" style="background: url({% static 'assets/img/front_page.jpg' %}); background-size: cover;">
-            <div class="razer-service-container-item">
+            <div class="razer-service-container-item animated animatedFadeInUp fadeInUp">
               <h1 class="razer-service-section-header">DIGITAL MARKETING</h1>
               <p class="razer-service-p-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quo corrupti, dolores provident recusandae velit ducimus nam aspernatur fugiat necessitatibus ipsa error! Repellat suscipit molestiae laudantium blanditiis dignissimos, optio inventore vel iste consequatur reiciendis quae veniam harum accusantium adipisci nihil voluptate amet maxime ipsa voluptatem, sunt accusamus reprehenderit, voluptas id?</p>
             </div>
-            <div class="row">
+            <div class="row animated animatedFadeInUp fadeInUp">
               <div class="razer-service-scrollable-container">
                 <div class="row">
                   <div class="col-5"><h1 class="razer-service-scrollable-header">CONDUCT RESEARCH</h1></div>
@@ -410,6 +410,55 @@
 
     </section>
     <!-- End Clients Section Title -->
+    <section class="section">
+      <div class="container">
+        <form action="" method="POST">
+          {% csrf_token %}
+          <div class="razer-new-project-container">
+            {% include 'includes/alerts.html' %}
+            <h1 class="razer-new-project-header">
+              NEW <span class="span-razer">PROJECT?</span>
+            </h1>
+            <div class="razer-project-input-wrapper">
+              <input
+                class="razer-project-input-box"
+                type="text"
+                placeholder="NAME"
+                name="name"
+                required
+              />
+              <span class="underline"></span>
+            </div>
+            <div class="razer-project-input-wrapper">
+              <input
+                class="razer-project-input-box"
+                type="email"
+                placeholder="EMAIL"
+                name="email"
+                required
+              />
+              <span class="underline"></span>
+            </div>
+            <div class="razer-project-input-wrapper">
+              <input
+                class="razer-project-input-box"
+                type="text"
+                placeholder="HOW CAN WE HELP?"
+                name="description"
+                required
+              />
+              <input
+                type="submit"
+                class="invite-btn"
+                type="button"
+                value="LET'S GET TO WORK!"
+              />
+              <span class="underline"></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
   </main>
   <!-- End #main -->
   <script>
