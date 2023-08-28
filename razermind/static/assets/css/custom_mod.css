@@ -677,10 +677,6 @@
   text-align: right;
 }
 
-.razer-service-scrollable-text-even{
-  text-align: right;
-}
-
 @keyframes fadeInUp {
   from {
       transform: translate3d(0,40px,0)
@@ -875,7 +871,7 @@
 .razer-about-container-text {
   color: #e3a325;
   font-size: 6rem;
-  font-weight: 200;
+  font-weight: 500;
 }
 
 .razer-about-text {

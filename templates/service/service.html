@@ -425,9 +425,16 @@
   </main>
   <!-- End #main -->
   <script>
+  var brandStrategy = document.getElementById('brand-strategy');
+  var brandStrategyDetail = document.getElementById('brand-strategy-detail');
+  var brandIdentity = document.getElementById('brand-identity');
+  var brandIdentityDetail = document.getElementById('brand-identity-detail');
+  var websiteDesign = document.getElementById('website-design');
+  var websiteDesignDetail = document.getElementById('website-design-detail');
+  var digitalMarketing = document.getElementById('digital-marketing');
+  var digitalMarketingDetail = document.getElementById('digital-marketing-detail');
+
   function displayBrandStrategy(){
-    var brandStrategy = document.getElementById('brand-strategy');
-    var brandStrategyDetail = document.getElementById('brand-strategy-detail');
     if (brandStrategy.style.display === "none"){
       brandStrategy.style.display = "block";
       brandStrategyDetail.style.display = "none";
@@ -438,8 +445,6 @@
   }
 
   function displayBrandStrategyDetail(){
-    var brandStrategy = document.getElementById('brand-strategy');
-    var brandStrategyDetail = document.getElementById('brand-strategy-detail');
     if (brandStrategyDetail.style.display === "none"){
       brandStrategyDetail.style.display = "block";
       brandStrategy.style.display = "none";
@@ -450,8 +455,6 @@
   }
 
   function displayBrandIdentity(){
-    var brandIdentity = document.getElementById('brand-identity');
-    var brandIdentityDetail = document.getElementById('brand-identity-detail');
     if (brandIdentity.style.display === "none"){
       brandIdentity.style.display = "block";
       brandIdentityDetail.style.display = "none";
@@ -462,8 +465,6 @@
   }
 
   function displayBrandIdentityDetail(){
-    var brandIdentity = document.getElementById('brand-identity');
-    var brandIdentityDetail = document.getElementById('brand-identity-detail');
     if (brandIdentityDetail.style.display === "none"){
       brandIdentityDetail.style.display = "block";
       brandIdentity.style.display = "none";
@@ -473,8 +474,6 @@
     }
   }
   function displayWebsite(){
-    var websiteDesign = document.getElementById('website-design');
-    var websiteDesignDetail = document.getElementById('website-design-detail');
     if (websiteDesign.style.display === "none"){
       websiteDesign.style.display = "block";
       websiteDesignDetail.style.display = "none";
@@ -485,8 +484,6 @@
   }
 
   function displayWebsiteDetail(){
-    var websiteDesign = document.getElementById('website-design');
-    var websiteDesignDetail = document.getElementById('website-design-detail');
     if (websiteDesignDetail.style.display === "none"){
       websiteDesignDetail.style.display = "block";
       websiteDesign.style.display = "none";
@@ -497,8 +494,6 @@
   }
 
   function displayDigitalMarketing(){
-    var digitalMarketing = document.getElementById('digital-marketing');
-    var digitalMarketingDetail = document.getElementById('digital-marketing-detail');
     if (digitalMarketing.style.display === "none"){
       digitalMarketing.style.display = "block";
       digitalMarketingDetail.style.display = "none";
@@ -509,8 +504,6 @@
   }
 
   function displayDigitalMarketingDetail(){
-    var digitalMarketing = document.getElementById('digital-marketing');
-    var digitalMarketingDetail = document.getElementById('digital-marketing-detail');
     if (digitalMarketingDetail.style.display === "none"){
       digitalMarketingDetail.style.display = "block";
       digitalMarketing.style.display = "none";
