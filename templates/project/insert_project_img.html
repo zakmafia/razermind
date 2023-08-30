@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="section-bg">
+<br>
+</section>
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2 class="razer-overlapping-header"><span><span class="razer-overlapping-span2">INSERT IMAGE</span><br><span>PROJECT <span class="span-razer"></span></span></span></h2>
+      </div>
+      <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            <label>Image</label>
+            {{ form.images }}
+        </div> <!-- form-group end.// -->
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block"> Add Image </button>
+        </div> <!-- form-group// -->
+    </form>
+    </div>
+  </section>
+{% endblock content %}

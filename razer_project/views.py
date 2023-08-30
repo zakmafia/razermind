@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Project, ProjectPhoto, Tag
-from .forms import ProjectForm
+from .forms import ProjectForm, ProjectImageForm
 # Create your views here.
 
 
@@ -38,3 +38,19 @@ def detail_project(request, p_id):
 
     }
     return render(request, "project/detail_project.html", context)
+
+
+def insert_project_image(request, p_id):
+    project = Project.objects.get(id=p_id)
+    if request.method == 'POST':
+        form = ProjectImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            img_form = form.save(commit=False)
+            img_form.project = project
+            img_form.save()
+    else:
+        form = ProjectImageForm()
+    context = {
+        'form': form
+    }
+    return render(request, "project/insert_project_img.html", context)

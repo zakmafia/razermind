@@ -645,7 +645,7 @@
 
 .razer-service-scrollable-container{
   overflow-y: scroll;
-  height: 300px;
+  height: 330px;
   margin-top: 50px;
 }
 .razer-service-scrollable-container::-webkit-scrollbar {

@@ -142,7 +142,7 @@
         </ul>
   
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-          {% for project in projects_branding|slice:'3' %}
+          {% for project in projects_branding|slice:'6' %}
             <div class="col-lg-4 col-md-6 portfolio-item filter-branding">
               <a href="{% url 'detail_project' project.id %}">
               <div class="portfolio-img">
@@ -150,12 +150,12 @@
               </div>
               <div class="portfolio-info">
                 <h3 class="razer-project-title-header">{{project.name}}</h3>
-                <p class="razer-project-p">{% for tag in project.tags.all %}<span class="span-project-tag"># {{tag}}</span>{% endfor %}</p>
+                <p class="razer-project-p">{% for tag in project.tags.all %}<span class="span-project-tag"> {{tag}}</span>{% endfor %}</p>
               </div>
             </a>
             </div>  
           {% endfor %} 
-          {% for project in projects_websites|slice:'3' %}
+          {% for project in projects_websites|slice:'6' %}
           <div class="col-lg-4 col-md-6 portfolio-item filter-websites">
             <a href="{% url 'detail_project' project.id %}">
             <div class="portfolio-img">
@@ -163,12 +163,12 @@
             </div>
             <div class="portfolio-info">
               <h3 class="razer-project-title-header">{{project.name}}</h3>
-              <p class="razer-project-p">{% for tag in project.tags.all %}<span class="span-project-tag"># {{tag}}</span>{% endfor %}</p>
+              <p class="razer-project-p">{% for tag in project.tags.all %}<span class="span-project-tag"> {{tag}}</span>{% endfor %}</p>
             </div>
           </a>
           </div> 
           {% endfor %} 
-          {% for project in projects_social_media|slice:'3' %}
+          {% for project in projects_social_media|slice:'6' %}
           <div class="col-lg-4 col-md-6 portfolio-item filter-social-media">
             <a href="{% url 'detail_project' project.id %}">
             <div class="portfolio-img">
@@ -176,7 +176,7 @@
             </div>
             <div class="portfolio-info">
               <h3 class="razer-project-title-header">{{project.name}}</h3>
-              <p class="razer-project-p">{% for tag in project.tags.all %}<span class="span-project-tag"># {{tag}}</span>{% endfor %}</p>
+              <p class="razer-project-p">{% for tag in project.tags.all %}<span class="span-project-tag"> {{tag}}</span>{% endfor %}</p>
             </div>
           </a>
           </div>  
