@@ -34,18 +34,76 @@
   <style>
     body{
         font-family: "Acumin Pro", sans-serif;
-        background: url({% static 'assets/img/404.png' %});
+        background-color: #080808;
         background-repeat: no-repeat;
         height: 100vh;
         z-index: 999;
-        opacity: 0.1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+    .invite404-btn {
+      position: relative;
+      max-width: 60%;
+      z-index: 10;
+      border-radius: 50%;
+      background-color: transparent;
+      color: #f2f2f2;
+      padding: 16px 60px;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 18px;
+      font-weight: 300;
+      text-transform: uppercase;
+      border-radius: 40px;
+      transition: 0.6s ease;
+      border: 1px solid #e3a325;
+    } 
+    /* 404 */
+    .razer404-overlapping-header {
+      line-height: 25px;
+    }
+
+    .razer404-overlapping-span1 {
+      font-size: 300px;
+      background: -webkit-linear-gradient(#eee, #eeeeee00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 0.1;
+    }
+
+    .razer404-overlapping-span2 {
+      font-size: 300px;
+      background: -webkit-linear-gradient(#eee, #eeeeee00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 0.1;
+    }
+
+    .razer404yes{
+      font-size: 280px;
+    }
+
+    .razer404lost{
+      font-size: 62px;
+      font-weight: 300;
+      color: #f2f2f2;
+    }
+
+    .razer404-takemehome{
+      margin-top: 120px;
+    }
+
   </style>
 </head>
 <body>
-    <div class="container text-center">
+    <div class="container">
         <div class="section-title">
-            <h2 class="razer404-overlapping-header"><span><span class="razer404-overlapping-span1">WHO ARE WE?</span><br><span>About <span class="span-razer">RazerMind</span></span></span></h2>
+            <h2 class="razer404-overlapping-header"><span><span class="razer404-overlapping-span1">404</span><br><span><span class="span-razer razer404yes">YES!</span></span></span></h2>
+          <h3 class="razer404lost" >YOU ARE LOST</h3>
+          <div class="razer404-takemehome">
+            <a href="{% url 'index' %}" class="invite404-btn">TAKE ME HOME</a>
+          </div>
         </div>
     </div>
 </body>

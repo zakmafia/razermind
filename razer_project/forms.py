@@ -12,11 +12,23 @@ class ProjectForm(ModelForm):
             'tags': forms.CheckboxSelectMultiple(),
         }
 
+class MultipleFileInput(forms.ClearableFileInput):
+    allow_multiple_selected = True
 
-class ProjectImageForm(forms.ModelForm):
-    class Meta:
-        model = ProjectPhoto
-        fields = ['images']
-        widgets = {
-            'images': ClearableFileInput(),
-        }
+class MultipleFileField(forms.FileField):
+    def __init__(self, *args, **kwargs):
+        kwargs.setdefault("widget", MultipleFileInput())
+        super().__init__(*args, **kwargs)
+
+    def clean(self, data, initial=None):
+        single_file_clean = super().clean
+        if isinstance(data, (list, tuple)):
+            result = [single_file_clean(d, initial) for d in data]
+        else:
+            result = single_file_clean(data, initial)
+        return result
+
+class ProjectImageForm(forms.Form):
+    images = MultipleFileField()
+
+

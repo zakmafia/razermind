@@ -7,11 +7,12 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import EmailMessage
-from razer_project.models import Project, UserProject, Tag
+from razer_project.models import Project, UserProject, Tag, BannerImage
 from razer_blog.models import Blog
 
 
 def index(request):
+    banner_images = BannerImage.objects.all()
     projects = Project.objects.all()
     branding_tag = Tag.objects.filter(slug='branding')
     website_tag = Tag.objects.filter(slug='websites')
@@ -28,6 +29,7 @@ def index(request):
         'projects_social_media': projects_social_media,
         'projects': projects,
         'blogs': blogs,
+        'banner_images': banner_images
     }
     return render(request, 'index.html', context)
 

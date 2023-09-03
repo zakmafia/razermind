@@ -53,3 +53,9 @@ class UserProject(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class BannerImage(models.Model):
+    image = models.ImageField(blank=True, null=True)
+    id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
+    

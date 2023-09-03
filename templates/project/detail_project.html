@@ -63,7 +63,9 @@
             <h2 class="razer-project-header-text">
               <span class="span-razer">{{project.name}}</span>
             </h2>
+            {% if user.is_authenticated %}
             <a href="{% url 'insert_project_image' project.id %}">Upload Image</a>
+            {% endif %}
             <div class="razer-project-text-container">
               <p class="razer-project-text">{{project.description}}</p>
             </div>

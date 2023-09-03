@@ -45,9 +45,8 @@ def insert_project_image(request, p_id):
     if request.method == 'POST':
         form = ProjectImageForm(request.POST, request.FILES)
         if form.is_valid():
-            img_form = form.save(commit=False)
-            img_form.project = project
-            img_form.save()
+            for image in request.FILES.getlist('images'):
+                ProjectPhoto.objects.create(images=image, project=project)
     else:
         form = ProjectImageForm()
     context = {

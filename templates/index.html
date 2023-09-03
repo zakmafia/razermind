@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <!-- ======= Hero Section ======= -->
-{% if projects.count >= 4 %}
+{% if banner_images %}
   <div id="home">
     <div id="razerFirstCarousel" class="my-carousel carousel slide carousel-fade" data-bs-ride="carousel"
       data-bs-interval="5000">
@@ -14,42 +14,42 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="{{projects.0.tumb_image.url}}" class="d-block w-100" alt="..." />
+          <img src="{{banner_images.0.image.url}}" class="d-block w-100" alt="..." />
           <div class="razer-carousel-caption carousel-caption-razer-home d-none d-md-block">
-            <h1 class="razer-carousel-header-text">
+            {% comment %} <h1 class="razer-carousel-header-text">
               {{projects.0.name}}
             </h1>
             <p class="razer-carousel-p-text">
               {{projects.0.description|slice:"50"}}...
             </p>
             <a href="{% url 'detail_project' projects.0.id %}" class="razer-styled-button">VIEW MORE</a>
-            <button class="extend-razer-styled-button"></button>
+            <button class="extend-razer-styled-button"></button> {% endcomment %}
           </div>
         </div>
         <div class="carousel-item">
-          <img src="{{projects.1.tumb_image.url}}" class="d-block w-100" alt="..." />
+          <img src="{{banner_images.1.image.url}}" class="d-block w-100" alt="..." />
           <div class="razer-carousel-caption carousel-caption-razer-home d-none d-md-block">
-            <h1 class="razer-carousel-header-text">
+            {% comment %} <h1 class="razer-carousel-header-text">
               {{projects.1.name}}
             </h1>
             <p class="razer-carousel-p-text">
               {{projects.1.description|slice:"50"}}...
             </p>
             <a href="{% url 'detail_project' projects.1.id %}" class="razer-styled-button">VIEW MORE</a>
-            <button class="extend-razer-styled-button"></button>
+            <button class="extend-razer-styled-button"></button> {% endcomment %}
           </div>
         </div>
         <div class="carousel-item">
-          <img src="{{projects.2.tumb_image.url}}" class="d-block w-100" alt="..." />
+          <img src="{{banner_images.2.image.url}}" class="d-block w-100" alt="..." />
           <div class="razer-carousel-caption carousel-caption-razer-home d-none d-md-block">
-            <h1 class="razer-carousel-header-text">
+            {% comment %} <h1 class="razer-carousel-header-text">
               {{projects.2.name}}
             </h1>
             <p class="razer-carousel-p-text">
               {{projects.2.description|slice:"50"}}...
             </p>
             <a href="{% url 'detail_project' projects.2.id %}" class="razer-styled-button">VIEW MORE</a>
-            <button class="extend-razer-styled-button"></button>
+            <button class="extend-razer-styled-button"></button> {% endcomment %}
           </div>
         </div>
       </div>
@@ -241,95 +241,107 @@
           </div>
         </div>
       </div>
-      <div id="razerClientsCarousel" class="carousel slide" data-bs-ride="true">
-        <div class="carousel-indicators">
+      <div id="razerClientsCarousel" class="carousel slide" data-bs-ride="">
+        <!-- <div class="carousel-indicators">
           <button type="button" data-bs-target="#razerClientsCarousel" data-bs-slide-to="0" class="active"
             aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#razerClientsCarousel" data-bs-slide-to="1"
             aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#razerClientsCarousel" data-bs-slide-to="2"
             aria-label="Slide 3"></button>
-        </div>
+        </div> -->
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="row" data-aos="zoom-in">
-              <div class="col-lg-2 col-md-4 col-6 align-items-center">
-                <img src="{% static 'assets/img/clients/client-1.png' %}" class="img-fluid" alt="" />
+              <div class="col-lg-2 col-md-4 col justify-content-center">
+                <div class="razer-logo-container">
+                  <img src="{% static 'assets/img/01.png' %}" class="img-fluid razer-scaledown1-logo" alt="" />
+                </div>
               </div>
 
-              <div class="col-lg-2 col-md-4 col-6 align-items-center">
-                <img src="{% static 'assets/img/clients/client-2.png' %}" class="img-fluid" alt="" />
+              <div class="col-lg-2 col-md-4 col justify-content-center">
+                <div class="razer-logo-container">
+                  <img src="{% static 'assets/img/02.png' %}" class="img-fluid razer-scale2-logo" alt="" />
+                </div>
               </div>
 
-              <div class="col-lg-2 col-md-4 col-6 align-items-center">
-                <img src="{% static 'assets/img/clients/client-3.png' %}" class="img-fluid" alt="" />
+              <div class="col-lg-2 col-md-4 col justify-content-center">
+                <div class="razer-logo-container">
+                  <img src="{% static 'assets/img/03.png' %}" class="img-fluid razer-scale3-logo" alt="" />
+                </div>
               </div>
 
-              <div class="col-lg-2 col-md-4 col-6 align-items-center">
-                <img src="{% static 'assets/img/clients/client-4.png' %}" class="img-fluid" alt="" />
+              <div class="col-lg-2 col-md-4 col justify-content-center">
+                <div class="razer-logo-container">
+                  <img src="{% static 'assets/img/04.png' %}" class="img-fluid razer-scaledown4-logo" alt="" />
+                </div>
               </div>
 
-              <div class="col-lg-2 col-md-4 col-6 align-items-center">
-                <img src="{% static 'assets/img/clients/client-5.png' %}" class="img-fluid" alt="" />
+              <div class="col-lg-2 col-md-4 col justify-content-center">
+                <div class="razer-logo-container">
+                  <img src="{% static 'assets/img/05.png' %}" class="img-fluid razer-scale5-logo" alt="" />
+                </div>
               </div>
 
-              <div class="col-lg-2 col-md-4 col-6 align-items-center">
-                <img src="{% static 'assets/img/clients/client-6.png' %}" class="img-fluid" alt="" />
+              <div class="col-lg-2 col-md-4 col justify-content-center">
+                <div class="razer-logo-container">
+                  <img src="{% static 'assets/img/06.png' %}" class="img-fluid razer-scale6-logo" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row" data-aos="zoom-in">
+              <div class="col-lg-2 col-md-4 col align-items-center">
+                <img src="{% static 'assets/img/01.png' %}" class="img-fluid" alt="" />
+              </div>
+
+              <div class="col-lg-2 col-md-4 col align-items-center">
+                <img src="{% static 'assets/img/02.png' %}" class="img-fluid" alt="" />
+              </div>
+
+              <div class="col-lg-2 col-md-4 col align-items-center">
+                <img src="{% static 'assets/img/03.png' %}" class="img-fluid" alt="" />
+              </div>
+
+              <div class="col-lg-2 col-md-4 col align-items-center">
+                <img src="{% static 'assets/img/04.png' %}" class="img-fluid" alt="" />
+              </div>
+
+              <div class="col-lg-2 col-md-4 col align-items-center">
+                <img src="{% static 'assets/img/05.png' %}" class="img-fluid" alt="" />
+              </div>
+
+              <div class="col-lg-2 col-md-4 col align-items-center">
+                <img src="{% static 'assets/img/06.png' %}" class="img-fluid" alt="" />
               </div>
             </div>
           </div>
           <div class="carousel-item">
             <div class="row" data-aos="zoom-in">
               <div class="col-lg-2 col-md-4 col-6 align-items-center">
-                <img src="{% static 'assets/img/clients/client-1.png' %}" class="img-fluid" alt="" />
+                <img src="{% static 'assets/img/01.png' %}" class="img-fluid" alt="" />
               </div>
 
               <div class="col-lg-2 col-md-4 col-6 align-items-center">
-                <img src="{% static 'assets/img/clients/client-2.png' %}" class="img-fluid" alt="" />
+                <img src="{% static 'assets/img/02.png' %}" class="img-fluid" alt="" />
               </div>
 
               <div class="col-lg-2 col-md-4 col-6 align-items-center">
-                <img src="{% static 'assets/img/clients/client-3.png' %}" class="img-fluid" alt="" />
+                <img src="{% static 'assets/img/03.png' %}" class="img-fluid" alt="" />
               </div>
 
               <div class="col-lg-2 col-md-4 col-6 align-items-center">
-                <img src="{% static 'assets/img/clients/client-4.png' %}" class="img-fluid" alt="" />
+                <img src="{% static 'assets/img/04.png' %}" class="img-fluid" alt="" />
               </div>
 
               <div class="col-lg-2 col-md-4 col-6 align-items-center">
-                <img src="{% static 'assets/img/clients/client-5.png' %}" class="img-fluid" alt="" />
+                <img src="{% static 'assets/img/05.png' %}" class="img-fluid" alt="" />
               </div>
 
               <div class="col-lg-2 col-md-4 col-6 align-items-center">
-                <img src="{% static 'assets/img/clients/client-6.png' %}" class="img-fluid" alt="" />
+                <img src="{% static 'assets/img/06.png' %}" class="img-fluid" alt="" />
               </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row" data-aos="zoom-in">
-              <div class="col-lg-2 col-md-4 col-6 align-items-center">
-                <img src="{% static 'assets/img/clients/client-1.png' %}" class="img-fluid" alt="" />
-              </div>
-
-              <div class="col-lg-2 col-md-4 col-6 align-items-center">
-                <img src="{% static 'assets/img/clients/client-2.png' %}" class="img-fluid" alt="" />
-              </div>
-
-              <div class="col-lg-2 col-md-4 col-6 align-items-center">
-                <img src="{% static 'assets/img/clients/client-3.png' %}" class="img-fluid" alt="" />
-              </div>
-
-              <div class="col-lg-2 col-md-4 col-6 align-items-center">
-                <img src="{% static 'assets/img/clients/client-4.png' %}" class="img-fluid" alt="" />
-              </div>
-
-              <div class="col-lg-2 col-md-4 col-6 align-items-center">
-                <img src="{% static 'assets/img/clients/client-5.png' %}" class="img-fluid" alt="" />
-              </div>
-
-              <div class="col-lg-2 col-md-4 col-6 align-items-center">
-                <img src="{% static 'assets/img/clients/client-6.png' %}" class="img-fluid" alt="" />
-              </div> 
             </div>
           </div>
         </div>

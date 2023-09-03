@@ -160,7 +160,6 @@
 }
 #razerFirstCarousel {
   position: relative;
-  height: 100vh;
   width: 100%;
 }
 #razerFirstCarousel .carousel-inner {
@@ -506,7 +505,7 @@
 
 @media only screen and (max-width: 700px) {
   .offcanvas {
-    width: 45% !important;
+    width: 40% !important;
   }
   .razer-sidenav-submenu {
     display: none;
@@ -515,7 +514,7 @@
     right: 15%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    width: 330px;
+    width: 260px;
     background-color: transparent;
     height: 200px;
     z-index: -99999;
@@ -542,6 +541,12 @@
 /* Razer Overlapping Text */
 .razer-overlapping-header {
   line-height: 25px;
+}
+
+@media (max-width: 768px) {
+  .razer-overlapping-header {
+    line-height: 60px;
+  }
 }
 
 .razer-overlapping-span1 {
@@ -598,6 +603,12 @@
   color: #f2f2f2;
 }
 
+@media (max-width: 768px) {
+  .razer-service-p {
+    max-width: 100%;
+  }
+}
+
 .razer-service-p-even {
   color: #f2f2f2;
 }
@@ -636,6 +647,12 @@
   color: #f2f2f2;
 }
 
+@media (max-width: 768px) {
+  .razer-huge-text-2 {
+    font-size: 3rem;
+  }
+}
+
 .clients hr {
   max-width: 100%;
   border: 1px solid #e3a325;
@@ -647,6 +664,7 @@
   overflow-y: scroll;
   height: 330px;
   margin-top: 50px;
+  padding-top: 10px;
 }
 .razer-service-scrollable-container::-webkit-scrollbar {
   width: 4px;
@@ -665,16 +683,63 @@
 .razer-service-scrollable-header{
   color: #e3a325;
   font-size: 50px;
-  margin-top: -10px;
   font-weight: 600;
+  margin-top: -12px;
+}
+
+@media (max-width: 768px) {
+  .razer-service-scrollable-header{
+    font-size: 30px;
+    margin-top: 0;
+  }
 }
 
 .razer-service-scrollable-text{
   color: #f2f2f2;
+  text-align: justify;
 }
 
 .razer-service-scrollable-header-even{
   text-align: right;
+}
+
+@media (max-width: 768px) {
+  .razer-service-scrollable-container{
+    overflow-y: scroll;
+    height: 200px;
+    margin-top: 50px;
+  }
+
+
+  .razer-non-scrollable-container{
+    overflow-y: scroll;
+    height: 200px;
+    margin-top: 50px;
+    padding-top: 10px;
+  }
+
+  .razer-non-scrollable-container::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .razer-non-scrollable-container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+  }
+  
+  .razer-non-scrollable-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px #f2f2f2; 
+  }
+
+  .razer-service-scrollable-container::-webkit-scrollbar {
+    width: 2px;
+  }
+  .razer-service-scrollable-header{
+    color: #e3a325;
+    font-size: 17px;
+    font-weight: 600;
+  }
 }
 
 @keyframes fadeInUp {
@@ -874,6 +939,12 @@
   font-weight: 500;
 }
 
+@media (max-width: 768px) {
+  .razer-about-container-text {
+    font-size: 5rem;
+  }
+}
+
 .razer-about-text {
   color: #f2f2f2;
 }
@@ -881,11 +952,20 @@
 .team-header-container {
   margin-bottom: 10px;
 }
+
+
 .razer-team-header-text {
   font-size: 6rem;
   color: #f2f2f2;
   font-weight: 200;
 }
+
+@media (max-width: 768px) {
+  .razer-team-header-text {
+    font-size: 5rem;
+  }
+}
+
 .razer-senior-team {
   padding-bottom: 120px;
 }
@@ -1048,6 +1128,15 @@
   border: 1px solid #e3a325;
 }
 
+@media (max-width: 768px) {
+  .invite-btn{
+    width: 80%;
+    right: 10%;
+    top: 70px;
+    bottom: auto;
+  }
+}
+
 .invite-btn:hover {
   color: #f2f2f2;
   background-color: #e3a325;
@@ -1060,6 +1149,15 @@
   padding-left: 150px;
   padding-right: 150px;
 }
+
+@media (max-width: 768px) {
+  .razer-strategy-scrollable-container{
+    padding-top: 28px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
 .razer-strategy-scrollable-container::-webkit-scrollbar {
   width: 4px;
 }
@@ -1228,6 +1326,7 @@
   font-size: 18px;
   color: white;
 }
+
 .project-razer-styled-button:hover + .project-extend-razer-styled-button {
   width: 100%;
   transition: width 0.3s ease-in-out;
@@ -1269,6 +1368,21 @@
   margin-right: 10px;
 }
 
+@media (max-width: 768px) {
+  .project-razer-styled-button {
+    font-size: 14px;
+  }
+  .project-extend-razer-styled-button {
+    font-size: 14px;
+  }
+  .next-project-extend-razer-styled-button {
+    font-size: 14px;
+  }
+  .next-project-razer-styled-button {
+    font-size: 14px;
+  }
+}
+
 /* End Razer Project */
 
 /* Razer Footer Space */
@@ -1285,6 +1399,12 @@
 
 .footer-top .razer-footer-lg-img {
   width: 415.987px;
+}
+
+@media (max-width: 768px) {
+  .footer-top .razer-footer-lg-img {
+    width: 300px;
+  }
 }
 
 .footer-top .razer-social-icons {
@@ -1313,6 +1433,13 @@
 .razer-blog-image{
   height: 50vh;
   object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .razer-blog-image{
+    height: 20vh;
+    object-fit: cover;
+  }
 }
 
 .razer-blog-hr{
@@ -1488,25 +1615,91 @@
   background-color: transparent;
 }
 
-/* 404 */
-/* Razer Overlapping Text */
-.razer404-overlapping-header {
-  line-height: 25px;
+.razer-logo-container{
+  height: 400px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 28px;
+  margin: auto;
 }
 
-.razer404-overlapping-span1 {
-  font-size: 70px;
-  background: -webkit-linear-gradient(#eee, #eeeeee00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 0.1;
+.razer-logo-container img {
+  transition: all 0.4s ease-in-out;
+  display: inline-block;
+  filter: grayscale(100);
+  max-height: 100%;
+  max-width: 100%;
+  padding: 10px;
 }
 
-.razer404-overlapping-span2 {
-  font-size: 70px;
-  background: -webkit-linear-gradient(#eee, #eeeeee00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 0.1;
+.razer-scaledown1-logo{
+  scale: 0.5;
 }
-/* End Overlapping Text */
+
+.razer-scaledown4-logo{
+  scale: 0.5;
+  margin-right: 40px;
+}
+
+.razer-scale2-logo{
+  scale: 1.3;
+}
+
+.razer-scale3-logo{
+  scale: 0.8;
+  margin-left: 22px;
+}
+
+.razer-scale5-logo{
+  scale: 1.3;  
+  margin-right: 33px;
+}
+
+.razer-scale6-logo{
+  scale: 1;
+  margin-left: 25px;
+}
+
+.razer-logo-container img:hover {
+  filter: none;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .razer-logo-container{
+    height: 200px;
+    padding: 0;
+  }
+  .razer-logo-container img {
+    padding: 0;
+  }
+  .razer-scaledown-logo{
+    scale: 1;
+  }
+  
+  .razer-scale2-logo{
+    scale: 1.3;
+  }
+  
+  .razer-scale3-logo{
+    scale: 0.8;
+    margin-left: 0;
+  }
+  
+  .razer-scale5-logo{
+    scale: 1.3;  
+    margin-right: 0;
+  }
+  
+  .razer-scale6-logo{
+    scale: 0.8;
+    margin-left: 0;
+  }
+  
+  .razer-scaledown4-logo{
+    scale: 0.5;
+    margin-right: 0;
+  }
+}
